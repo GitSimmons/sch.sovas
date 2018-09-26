@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import './App.css'
 import { Action } from './components/Action'
 import { ActionTip } from './components/ActionTip'
@@ -12,6 +13,11 @@ const STHeals = skills.filter(({ Name }) => STHealsArray.indexOf(Name) !== -1)
 
 const MTHealsArray = ['Indomitability', 'Succor', 'Sacred Soil', 'Whispering Dawn (Eos)', 'Fey Covenant (Eos)', 'Fey Illumination (Eos)']
 const MTHeals = skills.filter(({ Name }) => MTHealsArray.indexOf(Name) !== -1)
+
+const Container = styled.div`
+  margin: auto;
+  width: 1500px;
+`
 
 class App extends Component {
   render () {
@@ -54,6 +60,9 @@ class App extends Component {
           <div>
             {skills.map((skill) => <Action name={`${skill.Icon}`} alt={skill.Name} key={skill.Name} />)}
           </div>
+
+        </Mechanics>
+        <Container>
           {STHeals.map(({ Name, Icon, Description, Interactions }) =>
             <ActionTip
               tree='left-top'
@@ -72,7 +81,7 @@ class App extends Component {
               interactions={Interactions}
             />
           )}
-        </Mechanics>
+        </Container>
       </div>
     )
   }

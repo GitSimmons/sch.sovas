@@ -3,20 +3,20 @@ import styled, { css } from 'styled-components'
 import { Action } from './Action'
 
 const StyledActionTip = styled.div`
-display: flex;
-align-items: center;
-font-family: 'Roboto', sans-serif;
-font-weight: 100;
-font-size: 0.8rem;
-letter-spacing: 0.2rem;
-text-align: left;
-text-transform: uppercase;
-li {
-  list-style: none;
-}
-ul {
-  padding-left: 0.5rem;
-}
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  text-align: left;
+  text-transform: uppercase;
+  li {
+    list-style: none;
+    font-size: 12px;
+  }
+  ul {
+    padding-left: 0.5rem;
+  }
 `
 const StyledAction = styled(Action)`
 `
