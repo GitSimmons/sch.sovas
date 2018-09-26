@@ -178,7 +178,19 @@ export const skills = [
   },
   {
     'Icon': '/i/002000/002828.png',
-    'Name': 'Fey Covenant (Eos)'
+    'Name': 'Fey Covenant (Eos)',
+    'Description': [
+      '20% M.DEF increase',
+      'Duration 20.0',
+      'Recast 120.0',
+      'Radius 15.0'
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000516.png',
+        'Name': 'Summon'
+      }
+    ]
   },
   {
     'Icon': '/i/002000/002814.png',
@@ -221,7 +233,18 @@ export const skills = [
   },
   {
     'Icon': '/i/002000/002829.png',
-    'Name': 'Fey Illumination (Eos)'
+    'Name': 'Fey Illumination (Eos)',
+    'Description': [
+      '10% Aoe healing increase',
+      'duration 20.0',
+      'radius 15.0'
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000516.png',
+        'Name': 'Summon'
+      }
+    ]
   },
   {
     'Icon': '/i/000000/000869.png',
@@ -276,7 +299,25 @@ export const skills = [
   },
   {
     'Icon': '/i/002000/002804.png',
-    'Name': 'Sacred Soil'
+    'Name': 'Sacred Soil',
+    'Description': [
+      '10% Damage Reduction',
+      '20% Free succor proc',
+      'MP 0',
+      'Duration 15.0',
+      'Recast 30.0 (oGCD)',
+      'Radius 8.0'
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000510.png',
+        'Name': 'Aetherflow'
+      },
+      {
+        'Icon': '/i/000000/000515.png',
+        'Name': 'Shadow Flare'
+      }
+    ]
   },
   {
     'Icon': '/i/000000/000511.png',
