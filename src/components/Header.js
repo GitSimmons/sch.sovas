@@ -13,7 +13,6 @@ const StyledHeader = styled.header`
   }
   h2 {
     color: #99a2a8;
-    font-family: 'Roboto', sans-serif;
     font-weight: 100;
     font-size: 12px;
     letter-spacing: .5rem;

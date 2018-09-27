@@ -31,14 +31,12 @@ position: relative;
 }
 
 h2 {
-  font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   font-weight: 300;
   letter-spacing: .5rem;
   text-transform: uppercase;
 }
 h3 {
-  font-family: 'Roboto', sans-serif;
   font-size: 1.75rem;
   font-weight: 300;
   letter-spacing: .5rem;
@@ -52,7 +50,6 @@ img {
 }
 
 p, li {
-  font-family: 'Roboto', sans-serif;
   font-size: .9rem;
   font-weight: 400;
   position: relative;

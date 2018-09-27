@@ -15,8 +15,19 @@ const MTHealsArray = ['Indomitability', 'Succor', 'Sacred Soil', 'Whispering Daw
 const MTHeals = skills.filter(({ Name }) => MTHealsArray.indexOf(Name) !== -1)
 
 const Container = styled.div`
-  margin: auto;
-  width: 1500px;
+display: inline-block;
+margin: auto;
+padding: 2rem;
+`
+const HealerIcon = styled.div`
+position: relative;
+right: 50%;
+z-index: 1;
+`
+const DPSIcon = styled.div`
+position: relative;
+right: -50%;
+z-index: 1;
 `
 
 class App extends Component {
@@ -57,10 +68,6 @@ class App extends Component {
           <p> Your gauge will reset to zero if you die. However it will not reset if your pet dies or is dissipated. </p>
           <p> Aetherpact is the action performed by the Scholar on a party member, which commands your pet to use Fey Union on that player. Aetherpact has a range of 30 yalms, which means that your target must be within 30 yalms of the Scholar, not your fairy. Fey Union has a range of 15 yalms, which refers to the length of the tether. If the target is more than 15 yalms away from the pet when Aetherpact is used, your fairy will move towards the target until it is within range and then proceed to use Fey Union. </p>
 
-          <div>
-            {skills.map((skill) => <Action name={`${skill.Icon}`} alt={skill.Name} key={skill.Name} />)}
-          </div>
-
         </Mechanics>
         <Container>
           {STHeals.map(({ Name, Icon, Description, Interactions }) =>
@@ -72,6 +79,9 @@ class App extends Component {
               interactions={Interactions}
             />
           )}
+          <HealerIcon>
+            <img src='./assets/healericon.png' height='64px' />
+          </HealerIcon>
           {MTHeals.map(({ Name, Icon, Description, Interactions }) =>
             <ActionTip
               tree='left-bottom'
@@ -82,6 +92,33 @@ class App extends Component {
             />
           )}
         </Container>
+        <Container>
+
+          {STHeals.map(({ Name, Icon, Description, Interactions }) =>
+            <ActionTip
+              tree='right-top'
+              name={Name}
+              icon={Icon}
+              description={Description}
+              interactions={Interactions}
+            />
+          )}
+          <DPSIcon>
+            <img src='./assets/dpsicon.png' height='64px' />
+          </DPSIcon>
+          {MTHeals.map(({ Name, Icon, Description, Interactions }) =>
+            <ActionTip
+              tree='right-bottom'
+              name={Name}
+              icon={Icon}
+              description={Description}
+              interactions={Interactions}
+            />
+          )}
+        </Container>
+        <div>
+          {skills.map((skill) => <Action name={`${skill.Icon}`} alt={skill.Name} key={skill.Name} />)}
+        </div>
       </div>
     )
   }
