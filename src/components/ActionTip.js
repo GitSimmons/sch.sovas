@@ -23,7 +23,7 @@ const StyledActionTip = styled.div`
     font-size: 0.7rem;
   }
   ul {
-    padding: 0.25rem ;
+    padding: 0.5rem ;
   }
 `
 const StyledAction = styled(Action)`
@@ -61,7 +61,7 @@ const InteractionsContainer = styled.div`
   &:before {
     content: '';
     position: absolute;
-    height: 120px;
+    height: 150px;
     width: 1px;
     background-color: #99a2a8;
     top: 20px;
@@ -81,7 +81,7 @@ ${props => props.tree === 'left-bottom' && css`
   &:before {
     content: '';
     position: absolute;
-    height: 120px;
+    height: 150px;
     width: 1px;
     background-color: #99a2a8;
     bottom: 20px;
@@ -102,7 +102,7 @@ ${props => props.tree === 'left-bottom' && css`
   &:before {
     content: '';
     position: absolute;
-    height: 120px;
+    height: 150px;
     width: 1px;
     background-color: #99a2a8;
     top: 20px;
@@ -110,7 +110,7 @@ ${props => props.tree === 'left-bottom' && css`
   }`
 }
 
-/* Left Tree Bottom Part*/
+/* Right Tree Bottom Part*/
 ${props => props.tree === 'right-bottom' && css`
   &:after {
     content: '';
@@ -123,7 +123,7 @@ ${props => props.tree === 'right-bottom' && css`
   &:before {
     content: '';
     position: absolute;
-    height: 120px;
+    height: 150px;
     width: 1px;
     background-color: #99a2a8;
     bottom: 20px;
