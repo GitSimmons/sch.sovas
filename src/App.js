@@ -14,6 +14,12 @@ const STHeals = skills.filter(({ Name }) => STHealsArray.indexOf(Name) !== -1)
 const MTHealsArray = ['Indomitability', 'Succor', 'Sacred Soil', 'Whispering Dawn (Eos)', 'Fey Covenant (Eos)', 'Fey Illumination (Eos)']
 const MTHeals = skills.filter(({ Name }) => MTHealsArray.indexOf(Name) !== -1)
 
+const STDPSArray = ['Broil II', 'Miasma', 'Bio II', 'Ruin II', 'Energy Drain']
+const STDPS = skills.filter(({ Name }) => STDPSArray.indexOf(Name) !== -1)
+
+const MTDPSArray = ['Miasma II', 'Shadow Flare', 'Bane']
+const MTDPS = skills.filter(({ Name }) => MTDPSArray.indexOf(Name) !== -1)
+
 const Container = styled.div`
 display: inline-block;
 margin: auto;
@@ -94,7 +100,7 @@ class App extends Component {
         </Container>
         <Container>
 
-          {STHeals.map(({ Name, Icon, Description, Interactions }) =>
+          {STDPS.map(({ Name, Icon, Description, Interactions }) =>
             <ActionTip
               tree='right-top'
               name={Name}
@@ -106,7 +112,7 @@ class App extends Component {
           <DPSIcon>
             <img src='./assets/dpsicon.png' height='64px' />
           </DPSIcon>
-          {MTHeals.map(({ Name, Icon, Description, Interactions }) =>
+          {MTDPS.map(({ Name, Icon, Description, Interactions }) =>
             <ActionTip
               tree='right-bottom'
               name={Name}

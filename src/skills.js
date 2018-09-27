@@ -50,6 +50,21 @@ export const skills = [
       'MP 0',
       'Recast 10.0 (oGCD)',
       'Radius 8.0'
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000510.png',
+        'Name': 'Aetherflow'
+      },
+      {
+        'Icon': '/i/000000/000505.png',
+        'Name': 'Miasma'
+      },
+      {
+        'Icon': '/i/000000/000504.png',
+        'Name': 'Bio II'
+      }
+
     ]
   },
   {
@@ -79,7 +94,25 @@ export const skills = [
   },
   {
     'Icon': '/i/000000/000515.png',
-    'Name': 'Shadow Flare'
+    'Name': 'Shadow Flare',
+    'Description': [
+      `POTENCY 50 / TICK`,
+      `SLOW 5%`,
+      `DURATION 15.0`,
+      `MP 0`,
+      `RECAST 60.0`,
+      `RADIUS 5.0`
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000510.png',
+        'Name': 'Aetherflow'
+      },
+      {
+        'Icon': '/i/002000/002804.png',
+        'Name': 'Sacred Soil'
+      }
+    ]
   },
   {
     'Icon': '/i/002000/002809.png',
@@ -134,7 +167,23 @@ export const skills = [
   },
   {
     'Icon': '/i/000000/000514.png',
-    'Name': 'Energy Drain'
+    'Name': 'Energy Drain',
+    'Description': [
+      'POTENCY 150',
+      'ABSORBS PORTION OF DAMAGE AS HP',
+      'MP 0 (+1200)',
+      'RECAST 3.0 (oGCD)'
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000881.png',
+        'Name': 'Cleric Stance'
+      },
+      {
+        'Icon': '/i/000000/000510.png',
+        'Name': 'Aetherflow'
+      }
+    ]
   },
   {
     'Icon': '/i/000000/000888.png',
@@ -194,7 +243,18 @@ export const skills = [
   },
   {
     'Icon': '/i/002000/002814.png',
-    'Name': 'Broil II'
+    'Name': 'Broil II',
+    'Description': [
+      'POTENCY 230',
+      'MP 720',
+      'CAST 2.5 (GCD)'
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000881.png',
+        'Name': 'Cleric Stance'
+      }
+    ]
   },
   {
     'Icon': '/i/000000/000881.png',
@@ -229,7 +289,23 @@ export const skills = [
   },
   {
     'Icon': '/i/000000/000505.png',
-    'Name': 'Miasma'
+    'Name': 'Miasma',
+    'Description': [
+      'POTENCY 20 (+35 / TICK DOT)',
+      ' DURATION 24.0',
+      ' MP 600',
+      ' CAST 2.5 (GCD)'
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000881.png',
+        'Name': 'Cleric Stance'
+      },
+      {
+        'Icon': '/i/000000/000507.png',
+        'Name': 'Bane'
+      }
+    ]
   },
   {
     'Icon': '/i/002000/002829.png',
@@ -252,7 +328,13 @@ export const skills = [
   },
   {
     'Icon': '/i/002000/002807.png',
-    'Name': 'Broil'
+    'Name': 'Broil',
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000881.png',
+        'Name': 'Cleric Stance'
+      }
+    ]
   },
   {
     'Icon': '/i/002000/002839.png',
@@ -291,11 +373,35 @@ export const skills = [
   },
   {
     'Icon': '/i/000000/000502.png',
-    'Name': 'Ruin II'
+    'Name': 'Ruin II',
+    'Description': [
+      'POTENCY 100',
+      'MP 480',
+      'CAST 0.0 (GCD)'
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000881.png',
+        'Name': 'Cleric Stance'
+      }
+    ]
   },
   {
     'Icon': '/i/000000/000506.png',
-    'Name': 'Miasma II'
+    'Name': 'Miasma II',
+    'Description': [
+      'POTENCY 100 (+25 / TICK DOT)',
+      'DURATION 12.0',
+      'MP 1680',
+      'CAST 0.0 (GCD)',
+      'RADIUS 5.0'
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000881.png',
+        'Name': 'Cleric Stance'
+      }
+    ]
   },
   {
     'Icon': '/i/002000/002804.png',
@@ -355,7 +461,23 @@ export const skills = [
   },
   {
     'Icon': '/i/000000/000504.png',
-    'Name': 'Bio II'
+    'Name': 'Bio II',
+    'Description': [
+      'POTENCY 35 / TICK',
+      'DURATION 30.0',
+      'MP 720',
+      'CAST 0.0 (GCD)'
+    ],
+    'Interactions': [
+      {
+        'Icon': '/i/000000/000881.png',
+        'Name': 'Cleric Stance'
+      },
+      {
+        'Icon': '/i/000000/000507.png',
+        'Name': 'Bane'
+      }
+    ]
   },
   {
     'Icon': '/i/000000/000517.png',
