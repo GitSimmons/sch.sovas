@@ -15,6 +15,8 @@ const STDPS = getSkills(['Broil II', 'Miasma', 'Bio II', 'Ruin II', 'Energy Drai
 const MTDPS = getSkills(['Miasma II', 'Shadow Flare', 'Bane'])
 const SCHMisc = getSkills(['Resurrection', 'Aetherflow', 'Deployment Tactics', 'Emergency Tactics', 'Chain Stratagem'])
 const PetMisc = getSkills(['Summon', 'Summon II', 'Sustain', 'Rouse', 'Dissipation', 'Dissolve Union'])
+const PetActions = getSkills(['Heel', 'Place', 'Obey'])
+const SeleneMisc = getSkills(['Silent Dusk', 'Fey Caress', 'Fey Wind'])
 
 const Container = styled.div`
 display: inline-block;
@@ -178,8 +180,8 @@ class App extends Component {
             />
           )}
         </Container>
-        <div>
-          <Container>
+        <div style={{ 'display': 'flex', 'justify-content': 'space-between', 'max-width': '1200px', 'margin': 'auto' }}>
+          <div>
             <h3 style={{ 'text-align': 'left' }}>SCH Misc</h3>
             {SCHMisc.map(({ Name, Icon, Description, Interactions }) =>
               <ActionTip
@@ -190,8 +192,8 @@ class App extends Component {
                 key={Name}
               />
             )}
-          </Container>
-          <Container>
+          </div>
+          <div>
             <h3 style={{ 'text-align': 'right' }}>Pet Misc (SCH Actions)</h3>
             {PetMisc.map(({ Name, Icon, Description, Interactions }) =>
               <ActionTip
@@ -203,16 +205,89 @@ class App extends Component {
                 alignRight
               />
             )}
-          </Container>
-
-          <div style={{ 'text-align': 'left', 'max-width': '550px' }}>
-            <p>Your pet should, in almost all situations, be set to Obey so you can use
+          </div>
+        </div>
+        <div style={{ 'margin': 'auto', 'display': 'flex', 'justify-content': 'space-between', 'max-width': '1200px', 'flex-wrap': 'wrap' }}>
+          <div>
+            <h3 style={{ 'text-align': 'left' }}>Pet Actions To Keybind</h3>
+            {PetActions.map(({ Name, Icon, Description, Interactions }) =>
+              <ActionTip
+                name={Name}
+                icon={Icon}
+                description={Description}
+                interactions={Interactions}
+                key={Name}
+              />
+            )}
+            <div style={{ 'text-align': 'left', 'max-width': '550px' }}>
+              <p>Your pet should, in almost all situations, be set to Obey so you can use
               their abilities manually.</p>
-            <p>It is also recommended to keybind your pet’s three healing/buffing
+              <p>It is also recommended to keybind your pet’s three healing/buffing
                  abilities, but their cooldowns are long enough that clicking them
                  can be viable too. You can also drag them (as well as Heel and Place)
                  to your own hotbar if you find the pet hotbar to be too clunky.</p>
+            </div>
           </div>
+          <div>
+            <h3 style={{ 'text-align': 'right' }}>Selene Misc</h3>
+            {SeleneMisc.map(({ Name, Icon, Description, Interactions }) =>
+              <ActionTip
+                name={Name}
+                icon={Icon}
+                description={Description}
+                interactions={Interactions}
+                key={Name}
+                alignRight
+              />
+            )}
+          </div>
+        </div>
+        <div style={{ 'display': 'flex' }}>
+          <Container>
+            <h2>Role Actions</h2>
+            <div style={{ 'display': 'flex', 'flex-direction': 'row', 'justify-content': 'space-between', 'max-width': '1200px', 'margin': 'auto' }}>
+              <div>
+                <h3>Essential</h3>
+                {getSkills(['Lucid Dreaming', 'Swiftcast']).map(({ Name, Icon, Description, Interactions, Note }) =>
+                  <ActionTip
+                    name={Name}
+                    icon={Icon}
+                    description={Description}
+                    interactions={Interactions}
+                    note={Note}
+                    key={Name}
+                  />
+                )}
+              </div>
+              <div>
+                <h3>Useful</h3>
+                {getSkills(['Protect', 'Esuna', 'Surecast', 'Largesse']).map(({ Name, Icon, Description, Interactions, Note }) =>
+                  <ActionTip
+                    name={Name}
+                    icon={Icon}
+                    description={Description}
+                    interactions={Interactions}
+                    note={Note}
+                    key={Name}
+                  />
+                )}
+              </div>
+              <div>
+                <h3>Situational</h3>
+                {getSkills(['Cleric Stance', 'Break', 'Rescue', 'Eye for an Eye']).map(({ Name, Icon, Description, Interactions, Note }) =>
+                  <ActionTip
+                    name={Name}
+                    icon={Icon}
+                    description={Description}
+                    interactions={Interactions}
+                    note={Note}
+                    key={Name}
+                  />
+                )}
+
+              </div>
+            </div>
+          </Container>
         </div>
 
         {/* <div>
