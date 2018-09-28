@@ -203,7 +203,16 @@ const sch = [
   },
   {
     'Icon': '/i/000000/000888.png',
-    'Name': 'Largesse'
+    'Name': 'Largesse',
+    'Description': [
+      'INCREASES HEALING POTENCY BY 20%',
+      'DURATION 20.0',
+      'RECAST 90.0 (oGCD)'
+    ],
+    'Note': `Not too useful for Scholar as it, as well as other healing
+     buffs/debuffs such as Fey Illumination, only affects spells and not abilities. 
+     It can be useful in healing-intensive fights such as Ultimate where Succor 
+     spamming might be required.`
   },
   {
     'Icon': '/i/002000/002837.png',
@@ -574,16 +583,7 @@ const sch = [
       },
       {
         'Icon': '/i/000000/000888.png',
-        'Name': 'Largesse',
-        'Description': [
-          'INCREASES HEALING POTENCY BY 20%',
-          'DURATION 20.0',
-          'RECAST 90.0 (oGCD)'
-        ],
-        'Note': `Not too useful for Scholar as it, as well as other healing
-         buffs/debuffs such as Fey Illumination, only affects spells and not abilities. 
-         It can be useful in healing-intensive fights such as Ultimate where Succor 
-         spamming might be required.`
+        'Name': 'Largesse'
       },
       {
         'Icon': '/i/002000/002829.png',
@@ -718,7 +718,8 @@ const sch = [
     'Icon': '/i/000000/000526.png',
     'Name': 'Obey',
     'Description': [
-      'Orders pet to refrain from using actions until ordered to do so.'
+      'Orders pet to refrain from using actions',
+      'until ordered to do so'
     ]
   }
 ]
