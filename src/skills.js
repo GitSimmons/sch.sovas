@@ -5,7 +5,7 @@ const sch = [
     'Description': [
       'Grants 3 stacks of Aetherflow',
       'Restores 10% of max MP',
-      'Recast 60.0 (45.0 due toe Quickened Aetherflow) (oGCD)'
+      'Recast 60.0 (45.0 due to Quickened Aetherflow) (oGCD)'
     ]
   },
   {
