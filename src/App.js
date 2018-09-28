@@ -1,39 +1,92 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import './App.css'
-import { Action } from './components/Action'
 import { ActionTip } from './components/ActionTip'
 import { Header } from './components/Header'
 import { Mechanics } from './components/Mechanics'
 import { GlobalStyle } from './theme/GlobalStyle'
-import { skills } from './skills.js'
+import { schSkills } from './skills.js'
 
-const STHealsArray = ['Physick', 'Adloquium', 'Lustrate', 'Excogitation', 'Aetherpact (Fey Union)', 'Embrace']
-const STHeals = skills.filter(({ Name }) => STHealsArray.indexOf(Name) !== -1)
+const getSkills = (array) => array.map((name) => schSkills[name])
 
-const MTHealsArray = ['Indomitability', 'Succor', 'Sacred Soil', 'Whispering Dawn (Eos)', 'Fey Covenant (Eos)', 'Fey Illumination (Eos)']
-const MTHeals = skills.filter(({ Name }) => MTHealsArray.indexOf(Name) !== -1)
-
-const STDPSArray = ['Broil II', 'Miasma', 'Bio II', 'Ruin II', 'Energy Drain']
-const STDPS = skills.filter(({ Name }) => STDPSArray.indexOf(Name) !== -1)
-
-const MTDPSArray = ['Miasma II', 'Shadow Flare', 'Bane']
-const MTDPS = skills.filter(({ Name }) => MTDPSArray.indexOf(Name) !== -1)
+const STHeals = getSkills(['Physick', 'Adloquium', 'Lustrate', 'Excogitation', 'Aetherpact (Fey Union)', 'Embrace'])
+const MTHeals = getSkills(['Indomitability', 'Succor', 'Sacred Soil', 'Whispering Dawn (Eos)', 'Fey Covenant (Eos)', 'Fey Illumination (Eos)'])
+const STDPS = getSkills(['Broil II', 'Miasma', 'Bio II', 'Ruin II', 'Energy Drain'])
+const MTDPS = getSkills(['Miasma II', 'Shadow Flare', 'Bane'])
+const SCHMisc = getSkills(['Resurrection', 'Aetherflow', 'Deployment Tactics', 'Emergency Tactics', 'Chain Stratagem'])
+const PetMisc = getSkills(['Summon', 'Summon II', 'Sustain', 'Rouse', 'Dissipation', 'Dissolve Union'])
 
 const Container = styled.div`
 display: inline-block;
+position: relative; 
 margin: auto;
-padding: 2rem;
+padding: 2rem 2rem 2rem 2rem;
+vertical-align: top;
 `
 const HealerIcon = styled.div`
 position: relative;
-right: 50%;
+left: -32px;
+height: 64px;
+width: 100%;
+background: url('./assets/healericon.png') no-repeat left;
+background-size: 64px;
 z-index: 1;
 `
 const DPSIcon = styled.div`
 position: relative;
-right: -50%;
+right: -32px;
+height: 64px;
+width: 100%;
+background: url('./assets/dpsicon.png') no-repeat right;
+background-size: 64px;
 z-index: 1;
+z-index: 1;
+`
+
+const HealsSingleTargetIcon = styled.div`
+position: absolute;
+top: 25%;
+left: -5%;
+opacity: .6;
+z-index: 1;
+height: 48px;
+width: 48px;
+background: url('./assets/singletarget.png') no-repeat center;
+background-size: 48px;
+`
+const HealsMultiTargetIcon = styled.div`
+position: absolute;
+bottom: 25%;
+left: -5%;
+opacity: .6;
+z-index: 1;
+height: 48px;
+width: 48px;
+background: url('./assets/multitarget.png') no-repeat center;
+background-size: 48px;
+`
+
+const DPSSingleTargetIcon = styled.div`
+position: absolute;
+top: 25%;
+right: -5%;
+opacity: .6;
+z-index: 1;
+height: 48px;
+width: 48px;
+background: url('./assets/singletarget.png') no-repeat center;
+background-size: 48px;
+`
+const DPSMultiTargetIcon = styled.div`
+position: absolute;
+bottom: 25%;
+right: -32px;
+opacity: .6;
+z-index: 1;
+height: 48px;
+width: 48px;
+background: url('./assets/multitarget.png') no-repeat center;
+background-size: 48px;
 `
 
 class App extends Component {
@@ -83,11 +136,12 @@ class App extends Component {
               icon={Icon}
               description={Description}
               interactions={Interactions}
+              key={Name}
             />
           )}
-          <HealerIcon>
-            <img src='./assets/healericon.png' height='64px' />
-          </HealerIcon>
+          <HealsSingleTargetIcon />
+          <HealerIcon />
+          <HealsMultiTargetIcon />
           {MTHeals.map(({ Name, Icon, Description, Interactions }) =>
             <ActionTip
               tree='left-bottom'
@@ -95,11 +149,11 @@ class App extends Component {
               icon={Icon}
               description={Description}
               interactions={Interactions}
+              key={Name}
             />
           )}
         </Container>
         <Container>
-
           {STDPS.map(({ Name, Icon, Description, Interactions }) =>
             <ActionTip
               tree='right-top'
@@ -107,11 +161,12 @@ class App extends Component {
               icon={Icon}
               description={Description}
               interactions={Interactions}
+              key={Name}
             />
           )}
-          <DPSIcon>
-            <img src='./assets/dpsicon.png' height='64px' />
-          </DPSIcon>
+          <DPSSingleTargetIcon />
+          <DPSIcon />
+          <DPSMultiTargetIcon />
           {MTDPS.map(({ Name, Icon, Description, Interactions }) =>
             <ActionTip
               tree='right-bottom'
@@ -119,12 +174,50 @@ class App extends Component {
               icon={Icon}
               description={Description}
               interactions={Interactions}
+              key={Name}
             />
           )}
         </Container>
         <div>
-          {skills.map((skill) => <Action name={`${skill.Icon}`} alt={skill.Name} key={skill.Name} />)}
+          <Container>
+            <h3 style={{ 'text-align': 'left' }}>SCH Misc</h3>
+            {SCHMisc.map(({ Name, Icon, Description, Interactions }) =>
+              <ActionTip
+                name={Name}
+                icon={Icon}
+                description={Description}
+                interactions={Interactions}
+                key={Name}
+              />
+            )}
+          </Container>
+          <Container>
+            <h3 style={{ 'text-align': 'right' }}>Pet Misc (SCH Actions)</h3>
+            {PetMisc.map(({ Name, Icon, Description, Interactions }) =>
+              <ActionTip
+                name={Name}
+                icon={Icon}
+                description={Description}
+                interactions={Interactions}
+                key={Name}
+                alignRight
+              />
+            )}
+          </Container>
+
+          <div style={{ 'text-align': 'left', 'max-width': '550px' }}>
+            <p>Your pet should, in almost all situations, be set to Obey so you can use
+              their abilities manually.</p>
+            <p>It is also recommended to keybind your pet’s three healing/buffing
+                 abilities, but their cooldowns are long enough that clicking them
+                 can be viable too. You can also drag them (as well as Heel and Place)
+                 to your own hotbar if you find the pet hotbar to be too clunky.</p>
+          </div>
         </div>
+
+        {/* <div>
+          {skills.map((skill) => <Action name={`${skill.Icon}`} alt={skill.Name} key={skill.Name} />)}
+        </div> */}
       </div>
     )
   }
