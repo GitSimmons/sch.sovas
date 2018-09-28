@@ -25,10 +25,6 @@ const StyledActionTip = styled.div`
   ul {
     padding: 0.5rem ;
   }
-  p {
-    display: block;
-    font-size: 0.6rem;
-  }
 `
 const StyledAction = styled(Action)`
 `
@@ -121,7 +117,8 @@ ${props => props.tree === 'right-bottom' && css`
 
 const NoteWrapper = styled.div`
 p {
-  margin: 0 0 0 0;
+  padding: 0;
+  margin: 0;
   font-size: 0.9rem;
   max-width: 350px;
   text-align: left;
