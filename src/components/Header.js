@@ -17,6 +17,7 @@ const StyledHeader = styled.header`
     font-size: 12px;
     letter-spacing: .5rem;
     text-transform: uppercase;
+    text-align: center;
     a {
       color: #99a2a8;
       text-decoration: none;

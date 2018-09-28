@@ -17,12 +17,14 @@ body {
   font-weight: 300;
   letter-spacing: .5rem;
   text-transform: uppercase;
+  text-align: left;
 }
 h3 {
   font-size: 1.75rem;
   font-weight: 300;
   letter-spacing: .5rem;
   position: relative;
+  text-align: left;
   text-transform: uppercase;
   vertical-align: middle;
 }
