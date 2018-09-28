@@ -25,7 +25,10 @@ const StyledActionTip = styled.div`
   ul {
     padding: 0.5rem ;
   }
-  /* min-width: 550px; */
+  p {
+    display: block;
+    font-size: 0.6rem;
+  }
 `
 const StyledAction = styled(Action)`
 `
@@ -116,19 +119,32 @@ ${props => props.tree === 'right-bottom' && css`
 }
 `
 
-export const ActionTip = ({ name, icon, description, interactions, tree, alignRight }) => (
-  <StyledActionTip tree={tree} alignRight={alignRight}>
-    {interactions && <InteractionsContainer tree={tree}>
-      {interactions.map((action) =>
-        <StyledAction size='18' name={action.Icon} key={action.Name} />
-      )}
-    </InteractionsContainer>}
-    <Action name={icon} />
+const NoteWrapper = styled.div`
+p {
+  margin: 0 0 0 0;
+  font-size: 0.9rem;
+  max-width: 350px;
+  text-align: left;
+}
+`
 
-    <ul>
-      <li>{name}</li>
-      {description && description.map((string) => <li key={string}>{string}</li>)}
-    </ul>
+export const ActionTip = ({ name, icon, description, interactions, tree, alignRight, note }) => (
+  <NoteWrapper>
+    <StyledActionTip tree={tree} alignRight={alignRight}>
+      {interactions && <InteractionsContainer tree={tree}>
+        {interactions.map((action) =>
+          <StyledAction size='18' name={action.Icon} key={action.Name} />
+        )}
+      </InteractionsContainer>}
+      <Action name={icon} />
 
-  </StyledActionTip>
+      <ul>
+        <li>{name}</li>
+        {description && description.map((string) => <li key={string}>{string}</li>)}
+      </ul>
+
+    </StyledActionTip>
+    {note && <p> {note} </p>}
+
+  </NoteWrapper>
 )
