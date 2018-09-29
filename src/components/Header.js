@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
     text-transform: uppercase;
 
   }
-  h2 {
+  h4 {
     color: #99a2a8;
     font-weight: 100;
     font-size: 12px;

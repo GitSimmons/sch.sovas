@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledMechanics = styled.div`
+const StyledSection = styled.div`
 display: block;
 margin: auto;
 max-width: 1200px;
@@ -39,8 +39,8 @@ img {
 }
 `
 
-export const Mechanics = ({ children }) => (
-  <StyledMechanics>
+export const Section = ({ children }) => (
+  <StyledSection>
     {children}
-  </StyledMechanics>
+  </StyledSection>
 )

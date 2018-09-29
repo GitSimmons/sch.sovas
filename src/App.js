@@ -4,7 +4,7 @@ import './App.css'
 import { Actions } from './components/Actions'
 import { ActionTips } from './components/ActionTips'
 import { Header } from './components/Header'
-import { Mechanics } from './components/Mechanics'
+import { Section } from './components/Section'
 import { GlobalStyle } from './theme/GlobalStyle'
 
 const Container = styled.div`
@@ -88,10 +88,10 @@ class App extends Component {
         <Header>
           <img src='./assets/sch.png' alt='logo' height='75px' />
           <h1>Scholar</h1>
-          <h2>(Patch 4.4)</h2>
-          <h2><a href='https://www.reddit.com/r/ffxiv/comments/9gs4sf/scholar_44_guide/'>Sovasin Kair</a></h2>
+          <h4>(Patch 4.4)</h4>
+          <h4><a href='https://www.reddit.com/r/ffxiv/comments/9gs4sf/scholar_44_guide/'>Sovasin Kair</a></h4>
         </Header>
-        <Mechanics>
+        <Section>
           <h2>Job Mechanics</h2>
           <h3>Aetherflow
             <img src='./assets/aetherflow.png' alt='aetherflow' />
@@ -117,7 +117,7 @@ class App extends Component {
           <p> Your gauge will reset to zero if you die. However it will not reset if your pet dies or is dissipated. </p>
           <p> Aetherpact is the action performed by the Scholar on a party member, which commands your pet to use Fey Union on that player. Aetherpact has a range of 30 yalms, which means that your target must be within 30 yalms of the Scholar, not your fairy. Fey Union has a range of 15 yalms, which refers to the length of the tether. If the target is more than 15 yalms away from the pet when Aetherpact is used, your fairy will move towards the target until it is within range and then proceed to use Fey Union. </p>
 
-        </Mechanics>
+        </Section>
         <Container>
           <ActionTips actions={['Physick', 'Adloquium', 'Lustrate', 'Excogitation', 'Aetherpact (Fey Union)', 'Embrace']} tree='left-top' />
           <HealsSingleTargetIcon />
@@ -179,7 +179,7 @@ class App extends Component {
             </div>
           </Container>
         </div>
-        <Mechanics>
+        <Section>
           <h2>Decision Making</h2>
           <p>As a Scholar, your oGCD heals are much more powerful than your GCD heals and should
              be used as much as possible. Most damage in this game will require you to use a cooldown
@@ -255,7 +255,7 @@ class App extends Component {
           <Actions actions={['Fey Caress']} />
           <p>In scenarios where you have to quickly cleanse debuffs off multiple people, you could switch to Selene and use Fey Caress to immediately cleanse party members near her. One example is the fire DoT in the second phase of Rathalos EX.
           </p>
-        </Mechanics>
+        </Section>
         {/* <div>
           {skills.map((skill) => <Action name={`${skill.Icon}`} alt={skill.Name} key={skill.Name} />)}
         </div> */}
