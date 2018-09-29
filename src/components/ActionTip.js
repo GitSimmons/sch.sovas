@@ -130,10 +130,10 @@ export const ActionTip = ({ name, icon, description, interactions, tree, alignRi
     <StyledActionTip tree={tree} alignRight={alignRight}>
       {interactions && <InteractionsContainer tree={tree}>
         {interactions.map((action) =>
-          <StyledAction size='18' name={action.Icon} key={action.Name} />
+          <StyledAction size='18' icon={action.Icon} key={action.Name} />
         )}
       </InteractionsContainer>}
-      <Action name={icon} />
+      <Action icon={icon} />
 
       <ul>
         <li>{name}</li>
