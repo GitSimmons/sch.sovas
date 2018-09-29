@@ -1,14 +1,8 @@
 import React from 'react'
 import { Action } from './components/Action'
 
-const sch = [
-  {
-    'Icon': '/i/000000/000026.png',
-    'Name': 'Error',
-    'Description': [
-      `Most likely a typo in skill name`
-    ]
-  },
+const schSkills = [
+
   {
     'Icon': '/i/000000/000510.png',
     'Name': 'Aetherflow',
@@ -733,13 +727,56 @@ const sch = [
     ]
   }
 ]
+const skills = {
+  'error': {
+    'Icon': '/i/000000/000026.png',
+    'Name': 'Error',
+    'Description': [
+      `Most likely a typo in skill name`
+    ]
+  },
+  'sch': {
 
-let schSkills = {}
-sch.map(function ({ Name, ...rest }) {
-  schSkills[Name] = { Name, ...rest }
+  },
+  'whm': {
+    'Benediction': {
+      'Icon': '/i/002000/002627.png',
+      'Name': 'Benediction',
+      'Description': [
+        `RESTORES ALL OF A TARGET'S HP`,
+        'RECAST 180.0'
+      ],
+      'Note': `The most powerful single-target heal in the game. 
+    You should know when your White Mage plans on using this, 
+    as it would be a waste to use Excogitation if Benediction 
+    is going to heal your target up to full anyway. Commonly used 
+    after tankbusters to heal tanks who have used Holmgang or Living Dead.`
+    },
+    'Divine Benison': {
+      'Icon': '/i/002000/002638.png',
+      'Name': 'Divine Benison',
+      'Description': [
+        `SHIELDS TARGET 15% MAX HP`,
+        `RECAST 30.0`
+      ],
+      'Note': `This is a rather strong shield. It helps greatly with tankbusters and you shouldn’t have to waste a GCD for Adloquium if Divine Benison is available. Its short cooldown ensures that it will be up for nearly every tankbuster. You might want to still use Excogitation to heal the tank.`
+    },
+    'Plenary Indulgence': {
+      'Icon': '/i/002000/002639.png',
+      'Name': 'Plenary Indulgence',
+      'Description': [
+        `AOE HEAL BASED ON CONFESSION STACKS`,
+        `RECAST 60.0`
+      ],
+      'Note': `This ability heals party members for up to 450 potency, which is just 50 less than an Indomitability. Keep an eye on your party list and keep track of how many Confession stacks your party members have so you don’t waste your Indomitability when Plenary Indulgence alone is sufficient. ` }
+  }
+}
+
+schSkills.map(function ({ Name, ...rest }) {
+  skills.sch[Name] = { Name, ...rest }
 })
 
-const getSkills = (array) => array.map((name) => schSkills[name] || schSkills['Error'])
-const getActions = (array) => getSkills(array).map(({ Icon }) => <Action name={Icon} />)
+const getSkills = (array, job = 'sch') => array.map((name) => skills[job][name] || skills['error'])
+const getActions = (array, job) => getSkills(array, job).map(({ Icon }) => <Action name={Icon} />)
 
 export { getSkills, getActions }
