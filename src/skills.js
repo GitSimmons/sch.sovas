@@ -1,5 +1,6 @@
 import React from 'react'
 import { Action } from './components/Action'
+import { ActionTip } from './components/ActionTip'
 
 const schSkills = [
 
@@ -777,6 +778,4 @@ schSkills.map(function ({ Name, ...rest }) {
 })
 
 const getSkills = (array, job = 'sch') => array.map((name) => skills[job][name] || skills['error'])
-const getActions = (array, job) => getSkills(array, job).map(({ Icon }) => <Action name={Icon} />)
-
-export { getSkills, getActions }
+export { getSkills }

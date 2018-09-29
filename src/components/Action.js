@@ -7,8 +7,8 @@ const StyledAction = styled.div`
   height: ${props => `${props.size}px`};
   width: ${props => `${props.size}px`};
   background:
-   ${props => props.name
-    ? `url(./assets/actions/${props.name}) no-repeat center`
+   ${props => props.icon
+    ? `url(./assets/actions/${props.icon}) no-repeat center`
     : `url('./assets/actions/default.png') no-repeat center`
 }
   background-size: ${props => `${props.size - 1 / 6 * props.size}px`};
