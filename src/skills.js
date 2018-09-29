@@ -1,3 +1,6 @@
+import React from 'react'
+import { Action } from './components/Action'
+
 const sch = [
   {
     'Icon': '/i/000000/000026.png',
@@ -732,6 +735,11 @@ const sch = [
 ]
 
 let schSkills = {}
-sch.map(function ({ Name, ...rest }) { schSkills[Name] = { Name, ...rest } })
+sch.map(function ({ Name, ...rest }) {
+  schSkills[Name] = { Name, ...rest }
+})
 
-export { schSkills }
+const getSkills = (array) => array.map((name) => schSkills[name] || schSkills['Error'])
+const getActions = (array) => getSkills(array).map(({ Icon }) => <Action name={Icon} />)
+
+export { getSkills, getActions }

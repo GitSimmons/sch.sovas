@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import './App.css'
-import { Action } from './components/Action'
 import { ActionTip } from './components/ActionTip'
 import { Header } from './components/Header'
 import { Mechanics } from './components/Mechanics'
 import { GlobalStyle } from './theme/GlobalStyle'
-import { schSkills } from './skills.js'
-
-const getSkills = (array) => array.map((name) => schSkills[name] || schSkills['Error'])
-const getActions = (array) => getSkills(array).map(({ Icon }) => <Action name={Icon} />)
+import { getSkills, getActions } from './skills.js'
 
 const STHeals = getSkills(['Physick', 'Adloquium', 'Lustrate', 'Excogitation', 'Aetherpact (Fey Union)', 'Embrace'])
 const MTHeals = getSkills(['Indomitability', 'Succor', 'Sacred Soil', 'Whispering Dawn (Eos)', 'Fey Covenant (Eos)', 'Fey Illumination (Eos)'])
