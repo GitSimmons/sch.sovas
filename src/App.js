@@ -8,7 +8,7 @@ import { Mechanics } from './components/Mechanics'
 import { GlobalStyle } from './theme/GlobalStyle'
 import { schSkills } from './skills.js'
 
-const getSkills = (array) => array.map((name) => schSkills[name])
+const getSkills = (array) => array.map((name) => schSkills[name] || schSkills['Error'])
 const getActions = (array) => getSkills(array).map(({ Icon }) => <Action name={Icon} />)
 
 const STHeals = getSkills(['Physick', 'Adloquium', 'Lustrate', 'Excogitation', 'Aetherpact (Fey Union)', 'Embrace'])

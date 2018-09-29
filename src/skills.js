@@ -1,5 +1,12 @@
 const sch = [
   {
+    'Icon': '/i/000000/000026.png',
+    'Name': 'Error',
+    'Description': [
+      `Most likely a typo in skill name`
+    ]
+  },
+  {
     'Icon': '/i/000000/000510.png',
     'Name': 'Aetherflow',
     'Description': [
