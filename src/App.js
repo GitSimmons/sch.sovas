@@ -256,9 +256,47 @@ class App extends Component {
           <p>In scenarios where you have to quickly cleanse debuffs off multiple people, you could switch to Selene and use Fey Caress to immediately cleanse party members near her. One example is the fire DoT in the second phase of Rathalos EX.
           </p>
         </Section>
-        {/* <div>
-          {skills.map((skill) => <Action name={`${skill.Icon}`} alt={skill.Name} key={skill.Name} />)}
-        </div> */}
+        <Section>
+          <h2>Party Abilities</h2>
+          <p>Healing is a group effort, and there are various abilities your party members can use to contribute to mitigation and healing. This guide will not go into in-depth detail into exactly how the other jobs work, but will instead focus on abilities that may cause a change in your playstyle when used.</p>
+          <h3>Co-healer</h3>
+          <h4>White Mage</h4>
+          <ActionTips actions={['Benediction', 'Divine Benison', 'Plenary Indulgence']} job='whm' />
+          <h4>Astrologian</h4>
+          <ActionTips actions={['Essential Dignity', 'Earthly Star', 'Collective Unconscious']} job='ast' />
+          <h3>Tanks</h3>
+          <h4>Paladin</h4>
+          <ActionTips actions={['Divine Veil', 'Intervention', 'Cover', 'Hallowed Ground']} job='pld' />
+          <h4>Warrior</h4>
+          <ActionTips actions={['Shake it Off', 'Holmgang']} job='war' />
+          <h4>Dark Knight</h4>
+          <ActionTips actions={['The Blackest Night', 'Living Dead']} job='drk' />
+          <h4>Role Actions</h4>
+          <ActionTips actions={['Convalescence', 'Reprisal']} job='tank' />
+          <h3>Melee DPS</h3>
+          <h4>Monk</h4>
+          <ActionTips actions={['Mantra']} job='mnk' />
+          <h4>Dragoon</h4>
+          <ActionTips actions={['Blood for Blood', 'Battle Litany']} job='drg' />
+          <h4>Ninja</h4>
+          <ActionTips actions={['Smoke Screen', 'Trick Attack']} job='nin' />
+          <h4>Role Actions</h4>
+          <ActionTips actions={['Feint']} job='melee' />
+          <h3>Ranged DPS</h3>
+          <h4>Bard</h4>
+          <ActionTips actions={[`Nature's Minne`, 'Troubadour']} job='brd' />
+          <h4>Machinist</h4>
+          <ActionTips actions={['Dismantle']} job='mch' />
+          <h4>Role Actions</h4>
+          <ActionTips actions={['Refresh', 'Palisade']} job='ranged' />
+          <h3>Caster DPS</h3>
+          <h4>Summoner</h4>
+          <ActionTips actions={['Devotion', 'Resurrection']} job='smn' />
+          <h4>Red Mage</h4>
+          <ActionTips actions={['Verraise']} job='rdm' />
+          <h4>Role Actions</h4>
+          <ActionTips actions={['Addle', 'Apocatastasis', 'Mana Shift']} job='caster' />
+        </Section>
       </div>
     )
   }

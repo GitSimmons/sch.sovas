@@ -1,9 +1,4 @@
-import React from 'react'
-import { Action } from './components/Action'
-import { ActionTip } from './components/ActionTip'
-
 const schSkills = [
-
   {
     'Icon': '/i/000000/000510.png',
     'Name': 'Aetherflow',
@@ -728,16 +723,292 @@ const schSkills = [
     ]
   }
 ]
+// Format looks like:
+// 'name': {
+//   'Icon': '',
+//   'Name': '',
+//   'Description': [
+//     ''
+//   ],
+//   'Note': ``
+// },
 const skills = {
+
   'error': {
     'Icon': '/i/000000/000026.png',
-    'Name': 'Error',
-    'Description': [
-      `Most likely a typo in skill name`
-    ]
+    'Name': 'Error'
+  },
+  'ast': {
+    'Essential Dignity': {
+      'Icon': '/i/003000/003141.png',
+      'Name': 'Essential Dignity',
+      'Description': [
+        `HEALS TARGET `,
+        `POTENCY BASED ON MISSING HP`,
+        `RECAST 40.0`
+      ],
+      'Note': `The potency of this heal varies between 400-1000 depending on how much HP the target is missing. Due to server ticks, casting Benefic II and using Essential Dignity immediately afterwards will cause the ED to snapshot the target’s HP before the Benefic II, resulting in a very strong heal. Let your Astrologian heal up tankbusters or even autos with this 0 MP low cooldown ability if possible instead of wasting Excogitation.`
+    },
+    'Earthly Star': {
+      'Icon': '/i/003000/003143.png',
+      'Name': 'Earthly Star',
+      'Description': [
+        `TIMED AOE HEAL / DAMAGE`,
+        `CURE POTENCY 540 / 720`,
+        `RECAST 60.0`
+      ],
+      'Note': `Earthly Star places a field on the ground. If detonated, it deals damage and heals players inside it for 540 potency. If allowed to last for 10 seconds, it turns into a “Giant” Star. When detonated, it deals damage and heals players inside it for 720 potency. Its relatively short cooldown and 0 MP cost makes it an extremely efficient but unintuitive form of healing. If you see an Earthly Star placed on the ground, you may assume that the Astrologian plans on healing an upcoming AoE with it. Refrain from using big heals like Indomitability so the Star doesn’t overheal when detonated.`
+    },
+    'Collective Unconscious': {
+      'Icon': '/i/003000/003140.png',
+      'Name': 'Collective Unconscious',
+      'Description': [
+        `AOE MITIGATON / REGEN`,
+        `POTENCY 150 / TICK`,
+        `DURATION 15.0 (+18.0)`,
+        `RECAST 90.0`
+      ],
+      'Note': `The mitigation offered by this ability is only 10%, but the regen is extremely powerful and persists for 15 seconds after the Astrologian stops channelling. As Collective Unconscious can be channelled for up to 18 seconds, the regen could potentially last up to 33 seconds. If you see an Astrologian use this ability, let the regen heal the party up assuming there is no immediate threat to the party. Save your Whispering Dawn for later.`
+    }
+  },
+  'brd': {
+    'Nature\'s Minne': {
+      'Icon': '/i/002000/002615.png',
+      'Name': 'Nature\'s Minne',
+      'Description': [
+        `HEALING RECEIVED INCREASED BY 20%`,
+        `CAST ON SELF OR ALLY`,
+        `RECAST 45.0`,
+        `DURATION 15.0`
+      ],
+      'Note': `This ability increases the healing received by its target from spells. Abilities such as Excogitation or Lustrate are not affected. This is generally used to boost your Adloquium which can then be spread to the party using Deployment Tactics.`
+    },
+    'Troubadour': {
+      'Icon': '/i/002000/002612.png',
+      'Name': 'Troubadour',
+      'Description': [
+        `BUFFS PARTY BASED ON CURRENT SONG`,
+        `RECAST 180.0`,
+        `DURATION 30.0`
+      ],
+      'Note': `Bards rotate through their songs as they DPS. Using Troubadour will grant party members a buff that depends on what song they are currently playing. The possible buffs are:
+      Army’s Paeon: 10% physical mitigation
+      Wanderer’s Minuet: 10% magical mitigation
+      Mage’s Ballad: 15% max HP increase
+      Use it if possible to help mitigate or live through raidwide damage.`
+    }
+  },
+  'blm': {
+
+  },
+  'drk': {
+    'The Blackest Night': {
+      'Icon': '/i/003000/003081.png',
+      'Name': 'THE BLACKEST NIGHT',
+      'Description': [
+        `SHIELD ON SELF OR TARGET`,
+        `20% MAX HP ON SELF / 10% ON ALLY`,
+        `MP 2400`,
+        `RECAST 15.0`,
+        `DURATION 7.0`
+      ],
+      'Note': `This ability places a shield worth 20% of the Dark Knight’s max HP if used on himself, or 10% if used on an ally. Due to its low cooldown and 0 gauge cost, it can be used frequently and is an excellent form of single-target mitigation. Keep an eye out for its buff icon in the party list and adjust your healing appropriately.`
+    },
+    'Living Dead': {
+      'Icon': '/i/003000/003077.png',
+      'Name': 'LIVING DEAD',
+      'Description': [
+        `GRANTS “WALKING DEAD” STATUS INSTEAD OF DEATH`,
+        `RECAST 300.0`,
+        `DURATION 10.0 / 10.0`
+      ],
+      'Note': `When activated, the Dark Knight gains a Living Dead buff that lasts 10 seconds. If the Dark Knight’s HP reaches 0 while this buff is active, he will gain a Walking Dead buff that lasts 10 seconds. While this buff is active, the Dark Knight’s HP will not drop below 1. He must be healed to 100% before Walking Dead expires or he will die. Benediction is the best way to deal with this. Do not waste an Excogitation or Lustrate before your cohealer plans on using Benediction or Essential Dignity. If your tank plans on using Living Dead to deal with a tankbuster, do not use Excogitation on him beforehand as he will not be using any defensive cooldowns to mitigate the tankbuster and will likely gain Walking Dead regardless of whether you use Excogitation or not.`
+    }
+  },
+  'drg': {
+    'Blood for Blood': {
+      'Icon': '/i/000000/000309.png',
+      'Name': 'BLOOD FOR BLOOD',
+      'Description': [
+        `15% DAMAGE UP`,
+        `10% MORE DAMAGE TAKEN`,
+        `RECAST 80.0`,
+        `DURATION 20.0`
+      ],
+      'Note': `Dragoons use this to increase their DPS, but will result in them taking additional damage. Be mindful of Dragoons who use this ability during raidwide damage.`
+    },
+    'Battle Litany': {
+      'Icon': '/i/002000/002585.png',
+      'Name': 'BATTLE LITANY',
+      'Description': [
+        `15% CRIT BUFF TO SELF AND PARTY`,
+        `RECAST 180.0`,
+        `DURATION 20.0`
+      ],
+      'Note': `In a coordinated party, try to line up your Chain Stratagem with Battle Litany and other party buffs to maximise DPS.` }
+  },
+  'mch': {
+    'Dismantle': {
+      'Icon': '/i/003000/003011.png',
+      'Name': 'Dismantle',
+      'Description': [
+        `LOWERS TARGET’S DAMAGE DEALT BY 10%`,
+        `RECAST 60.0`,
+        `DURATION 5.0`
+      ],
+      'Note': `A simple damage down debuff with a relatively short cooldown. Use it to mitigate tankbusters or raidwides.`
+    }
+  },
+  'mnk': {
+    'Mantra': {
+      'Icon': '/i/000000/000216.png',
+      'Name': 'MANTRA',
+      'Description': [
+        `INCREASES HEALING RECEIVED`,
+        `FOR SELF AND PARTY BY 20%`,
+        `RECAST 90.0`,
+        `DURATION 15.0`
+      ],
+      'Note': `Basically an AoE Convalescence that can help with heal checks.`
+    }
+
+  },
+  'nin': {
+    'Smoke Screen': {
+      'Icon': '/i/002000/002917.png',
+      'Name': 'Smoke Screen',
+      'Description': [
+        `REDUCES ENMITY GENERATION`,
+        `CAST ON PARTY MEMBER`,
+        `RECAST 180.0`,
+        `DURATION 15.0`
+      ],
+      'Note': `This ability is usually used on White Mages to lower the aggro they generate during intense heal checks, especially when using Cure III. Scholars do not generate much aggro and will almost never be targeted by this.`
+    },
+    'Trick Attack': {
+      'Icon': '/i/000000/000618.png',
+      'Name': 'Trick Attack',
+      'Description': [
+        `DEALS DAMAGE`,
+        `POTENCY 240 (400 REAR)`,
+        `10% INCREASE TO DAMAGE TAKEN BY TARGET (POSITIONAL)`,
+        `RECAST 60.0`,
+        `DURATION 10.0`
+      ],
+      'Note': `In a coordinated party, try to line up your Chain Stratagem with Trick Attack and other party buffs to maximise DPS.`
+    }
+  },
+  'pld': {
+    'Divine Veil': {
+      'Icon': '/i/002000/002508.png',
+      'Name': 'Divine Veil',
+      'Description': [
+        `AOE SHIELD 10% PLD’S MAX HP `,
+        `PROC’S WHEN HEALED`,
+        `RECAST 120.0`,
+        `DURATION 30.0 / 30.0`
+      ],
+      'Note': `When used, the Paladin gains a buff that lasts 30 seconds. If the Paladin is healed while this buff is active, the buff triggers and applies a shield equal to 10% of the Paladin’s max HP on players within 15 yalms. This shield lasts 30 seconds. Keep an eye on the Paladin’s buff bar and ensure that it is triggered in time. You can manually Embrace the Paladin to trigger the shield.`
+    },
+    'Intervention': {
+      'Icon': '/i/002000/002512.png',
+      'Name': 'Intervention',
+      'Description': [
+        `REDUCEs DAMAGE TAKEN BY TARGET`,
+        `REDUCTION 10% (+10% / +15%)`,
+        `RECAST 10.0`,
+        `GAUGE 50`,
+        `DURATION 6.0`
+      ],
+      'Note': `When used on an ally, that ally takes 10% less damage. This consumes Oath Gauge, so it is usually saved for hard-hitting tankbusters. If the Paladin has Rampart or Sentinel active, the mitigation will be increased by 10% or 15% respectively (but not both). Look at your Paladin’s buff bar to estimate the mitigation.`
+    },
+    'Cover': {
+      'Icon': '/i/002000/002501.png',
+      'Name': 'Cover',
+      'Description': [
+        `TAKES DAMAGE INTENDED FOR TARGET`,
+        `20% MITIGATION`,
+        `DURATION 12.0`
+      ],
+      'Note': `Cover tethers the Paladin to another player and causes the Paladin to take all damage intended for that player for 12 seconds. Additionally, the Paladin will only suffer 80% of that damage. The Paladin and his target will both have a Cover buff. Keep an eye out for this buff and adjust your healing accordingly to heal the Paladin.`
+    },
+    'Hallowed Ground': {
+      'Icon': '/i/002000/002502.png',
+      'Name': 'Hallowed Ground',
+      'Description': [
+        `INVULNERABILITY`,
+        `RECAST 420.0`,
+        `DURATION 10.0`
+      ],
+      'Note': `Cover tethers the Paladin to another player and causes the Paladin to take all damage intended for that player for 12 seconds. Additionally, the Paladin will only suffer 80% of that damage. The Paladin and his target will both have a Cover buff. Keep an eye out for this buff and adjust your healing accordingly to heal the Paladin.`
+    }
+  },
+  'rdm': {
+    'Verraise': {
+      'Icon': '/i/003000/003221.png',
+      'Name': 'Verraise',
+      'Description': [
+        `RAISES DOWNED PLAYER (INFLICTS WEAKNESS)`,
+        `MP 3600`,
+        `CAST 10.0 (INSTANT WITH DUALCAST)`
+      ],
+      'Note': `Another resurrection spell with a 10 second hardcast time. However it can be casted instantly every other GCD due to Dualcast, making Red Mages invaluable for progression.`
+    }
+  },
+  'sam': {
+
   },
   'sch': {
 
+  },
+  'smn': {
+    'Devotion': {
+      'Icon': '/i/002000/002688.png',
+      'Name': 'Devotion',
+      'Description': [
+        `2% DAMAGE UP`,
+        `2% AOE MITIGATION`,
+        `5% HEALING BUFF`,
+        `RECAST 120.0`,
+        `DURATION 15.0`
+      ],
+      'Note': `Devotion increases damage dealt and reduces damage taken by party members by 2%. It also increases healing potency of party members by 5%. Do not rely on this as the buff is marginal and is used mainly for DPS rather than for heal checks.`
+    },
+    'Resurrection': {
+      'Icon': '/i/000000/000511.png',
+      'Name': 'Resurrection',
+      'Description': [
+        `RAISES DOWNED PLAYER (INFLICTS WEAKNESS)`,
+        `MP 3600`,
+        `CAST 8.0`
+      ],
+      'Note': `Functions just like your Resurrection. During prog, try to let your Summoner raise first so you can save your Swiftcast and MP for later.`
+    }
+
+  },
+  'war': {
+    'Shake it Off': {
+      'Icon': '/i/002000/002563.png',
+      'Name': 'Shake it Off',
+      'Description': [
+        `SHIELDS PARTY`,
+        `8% (+16%) OF MAX HP`,
+        `RECAST 90.0`,
+        `DURATION 15.0`
+      ],
+      'Note': `The strength of this shield is equal to 8% of the Warrior’s max HP. This percentage is increased by 4% for each of the following buffs present on the Warrior: Thrill of Battle, Inner Beast, Vengeance and Raw Intuition. These buffs will be dispelled on cast. This is a decent partywide shield. Simply look for the icon, as unlike Divine Veil, it does not require a heal to trigger.`
+    },
+    'Holmgang': {
+      'Icon': '/i/000000/000266.png',
+      'Name': 'Holmgang',
+      'Description': [
+        `PREVENTS HP FROM FALLING BELOW 1`,
+        `BINDS USER AND TARGET`,
+        `DURATION 6.0`,
+        `RECAST 180.0`
+      ],
+      'Note': `Warriors who plan to use Holmgang to deal with a tankbuster will not bother using any other cooldowns to mitigate the tankbuster. Let your cohealer use Benediction or Essential Dignity to heal them up. If these are not available, you’ll have to step in with Excogitation. If the Warrior plans on taking more than one tankbuster during the 6 second duration, ensure that you use Excogitation (or Lustrate) after the last tankbuster so their HP doesn’t just drop down to 1 again.`
+    }
   },
   'whm': {
     'Benediction': {
@@ -770,6 +1041,97 @@ const skills = {
         `RECAST 60.0`
       ],
       'Note': `This ability heals party members for up to 450 potency, which is just 50 less than an Indomitability. Keep an eye on your party list and keep track of how many Confession stacks your party members have so you don’t waste your Indomitability when Plenary Indulgence alone is sufficient. ` }
+  },
+  'caster': {
+    'Addle': {
+      'Icon': '/i/000000/000861.png',
+      'Name': 'Addle',
+      'Description': [
+        `10% REDUCTION TO INT AND MND`,
+        `RECAST 90.0`,
+        `DURATION 10.0`
+      ],
+      'Note': `Commonly used to mitigate magical raidwide damage.`
+    },
+    'Apocatastasis': {
+      'Icon': '/i/000000/000868.png',
+      'Name': 'Apocatastasis',
+      'Description': [
+        `20% MAGICAL MITIGATION ON ALLY`,
+        `RECAST 90.0`,
+        `DURATION 10.0`
+      ],
+      'Note': `Used to mitigate magical tankbusters or DoTs.`
+    },
+    'Mana Shift': {
+      'Icon': '/i/000000/000867.png',
+      'Name': 'Mana Shift',
+      'Description': [
+        `TRANSFERS UP TO 20% OF MAX MP TO ALLY`,
+        `RECAST 120.0`
+      ],
+      'Note': `If you find yourself in a party without a Bard or Machinist in a healing-intensive fight, this ability is essential to prevent you from running out of mana.`
+    }
+  },
+  'melee': {
+    'Feint': {
+      'Icon': '/i/000000/000828.png',
+      'Name': 'Feint',
+      'Description': [
+        `10% REDUCTION TO STR AND DEX`,
+        `RECAST 120.0`,
+        `DURATION 10.0`
+      ],
+      'Note': `This ability can be used to lower the damage dealt by physical attacks. This can be used situationally to mitigate physical tankbusters.`
+    }
+  },
+  'ranged': {
+    'Refresh': {
+      'Icon': '/i/000000/000847.png',
+      'Name': 'Refresh',
+      'Description': [
+        `RESTORES MP IN AOE`,
+        `600MP / TICK`,
+        `RECAST 180.0`,
+        `DURATION 30.0`
+      ],
+      'Note': `Restores 600MP/tick for a total of 6000 MP over 30 seconds.`
+    },
+    'Palisade': {
+      'Icon': '/i/000000/000850.png',
+      'Name': 'Palisade',
+      'Description': [
+        `20% PHYSICAL MITIGATION ON ALLY`,
+        `RECAST 150.0`,
+        `DURATION 10.0`
+      ],
+      'Note': `Used to mitigate physical tankbusters.`
+    }
+  },
+  'tank': {
+    'Convalescence': {
+      'Icon': '/i/000000/000804.png',
+      'Name': 'Convalescence',
+      'Description': [
+        `HEALING RECEIVED INCREASED BY 20%`,
+        `RECAST 120.0`,
+        `DURATION 20.0`
+      ],
+      'Note': `Convalescence only affects spells, not abilities, so your Aetherflow heals will not be affected by it. However, it does affect Adloquium. If you plan on using Deployment Tactics, it is worth asking your tank to use Convalescence to boost the strength of the initial Adloquium casted on him.`
+    },
+    'Reprisal': {
+      'Icon': '/i/000000/000806.png',
+      'Name': 'Reprisal',
+      'Description': [
+        `10% DAMAGE DOWN ON TARGET`,
+        `RECAST 60.0`,
+        `DURATION 5.0`
+      ],
+      'Note': `Your tanks should be using this to mitigate massive raidwide damage.  Reprisal alone is usually not sufficient, so you will still have to shield the party.`
+    }
+  },
+  'healer': {
+
   }
 }
 
