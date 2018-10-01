@@ -5,6 +5,7 @@ import { Actions } from './components/Actions'
 import { ActionTips } from './components/ActionTips'
 import { Header } from './components/Header'
 import { Section } from './components/Section'
+import { Timeline } from './components/Timeline'
 import { GlobalStyle } from './theme/GlobalStyle'
 
 const Container = styled.div`
@@ -179,6 +180,14 @@ class App extends Component {
             </div>
           </Container>
         </div>
+        <Section>
+          <h2> Mechanical Quirks </h2>
+          <p>Scholar is known for being a mechanically clunky job with many quirks not listed in your tooltips. Here are a few that you should be aware of.</p>
+          <h4>SHIELD DELAY</h4>
+
+          <Timeline />
+          <p>It takes about 1-2 seconds for Galvanise to actually apply, even though the icon appears immediately. In some situations, this can be useful. For example, you might want to cast Adloquium on a tank using Convalescence and buffed by Nature’s Minne to spread onto the rest of the party using Deployment Tactics. Due to shield delay, the Galvanise that you apply will not be immediately eaten by the next autoattack, giving you about two seconds to use Deployment Tactics on him.</p>
+        </Section>
         <Section>
           <h2>Decision Making</h2>
           <p>As a Scholar, your oGCD heals are much more powerful than your GCD heals and should
