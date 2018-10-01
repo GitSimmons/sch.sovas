@@ -6,7 +6,7 @@ export const Actions = ({ actions, size }) => (
   getSkills(actions).map(({ Icon }) =>
     <Action
       icon={Icon}
-      size={size | '48'}
+      size={size || '48'}
     />
   )
 )
