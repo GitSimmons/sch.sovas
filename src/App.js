@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import './App.css'
 import { Actions } from './components/Actions'
 import { ActionTips } from './components/ActionTips'
+import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import * as Icon from './components/ClassIcons'
 import { JobSkills } from './components/JobSkills'
@@ -336,6 +337,7 @@ class App extends Component {
           <JobSkills actions={['Verraise']} job='rdm' />
           <JobSkills actions={['Addle', 'Apocatastasis', 'Mana Shift']} job='caster' />
         </Section>
+        <Footer />
       </div>
     )
   }
