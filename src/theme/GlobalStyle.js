@@ -2,11 +2,12 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Work+Sans|Roboto:100,300.400|Raleway');  
-
+html {
+  background-image: linear-gradient(#002534, black);
+}
 body { 
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(#002534, black);
     font-family: 'Raleway', sans-serif;
   }
   p, li {
