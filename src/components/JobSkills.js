@@ -35,15 +35,36 @@ const titles = {
   whm: 'White Mage'
 }
 
+const ActionsGroup = styled.div`
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  justify-content: stretch;
+  align-content: stretch;
+  margin: 0rem 1rem 1rem 0rem;
+  
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr
+  }
+`
+const StyledJobTitle = styled.div`
+display: flex;
+/* margin: 1rem 1rem 1rem 0px; */
+`
+
+const StyledJobSkills = styled.div`
+`
 export const JobSkills = ({ job, actions }) => {
   const JobIcon = icons[job]
   const Title = titles[job]
 
-  return (<div>
-    <div style={{ 'display': 'flex' }}>
-      <h4>{Title}</h4>
-      <JobIcon />
-    </div>
-    <ActionTips actions={actions} job={job} />
-  </div>)
+  return (
+    <StyledJobSkills>
+      <StyledJobTitle>
+        <h4>{Title}</h4>
+        <JobIcon />
+      </StyledJobTitle>
+      <ActionsGroup>
+        <ActionTips actions={actions} job={job} />
+      </ActionsGroup>
+    </StyledJobSkills>)
 }
