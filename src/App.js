@@ -318,27 +318,23 @@ class App extends Component {
           <JobSkills actions={['Divine Veil', 'Intervention', 'Cover', 'Hallowed Ground']} job='pld' />
           <JobSkills actions={['Shake it Off', 'Holmgang']} job='war' />
           <JobSkills actions={['The Blackest Night', 'Living Dead']} job='drk' />
-          <h4>Role Actions</h4>
-          <ActionTips actions={['Convalescence', 'Reprisal']} job='tank' />
+          <JobSkills actions={['Convalescence', 'Reprisal']} job='tank' />
 
           <h3>Melee DPS</h3>
           <JobSkills actions={['Mantra']} job='mnk' />
           <JobSkills actions={['Blood for Blood', 'Battle Litany']} job='drg' />
           <JobSkills actions={['Smoke Screen', 'Trick Attack']} job='nin' />
-          <h4>Role Actions</h4>
-          <ActionTips actions={['Feint']} job='melee' />
+          <JobSkills actions={['Feint']} job='melee' />
 
           <h3>Ranged DPS</h3>
           <JobSkills actions={[`Nature's Minne`, 'Troubadour']} job='brd' />
           <JobSkills actions={['Dismantle']} job='mch' />
-          <h4>Role Actions</h4>
-          <ActionTips actions={['Refresh', 'Palisade']} job='ranged' />
+          <JobSkills actions={['Refresh', 'Palisade']} job='ranged' />
 
           <h3>Caster DPS</h3>
           <JobSkills actions={['Devotion', 'Resurrection']} job='smn' />
           <JobSkills actions={['Verraise']} job='rdm' />
-          <h4>Role Actions</h4>
-          <ActionTips actions={['Addle', 'Apocatastasis', 'Mana Shift']} job='caster' />
+          <JobSkills actions={['Addle', 'Apocatastasis', 'Mana Shift']} job='caster' />
         </Section>
       </div>
     )

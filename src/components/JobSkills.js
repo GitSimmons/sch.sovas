@@ -32,7 +32,13 @@ const titles = {
   sch: 'Scholar',
   smn: 'Summoner',
   war: 'Warrior',
-  whm: 'White Mage'
+  whm: 'White Mage',
+
+  tank: 'Role actions',
+  ranged: 'Role actions',
+  caster: 'Role actions',
+  melee: 'Role actions'
+
 }
 
 const ActionsGroup = styled.div`
@@ -61,7 +67,7 @@ export const JobSkills = ({ job, actions }) => {
     <StyledJobSkills>
       <StyledJobTitle>
         <h4>{Title}</h4>
-        <JobIcon />
+        {JobIcon && <JobIcon />}
       </StyledJobTitle>
       <ActionsGroup>
         <ActionTips actions={actions} job={job} />
