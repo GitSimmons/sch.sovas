@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import './App.css'
+import { Action } from './components/Action'
 import { Actions } from './components/Actions'
 import { ActionTips } from './components/ActionTips'
 import { Header } from './components/Header'
 import { Section } from './components/Section'
 import { Timeline } from './components/Timeline'
 import { GlobalStyle } from './theme/GlobalStyle'
+// import { ReactComponent as Logo } from './sch.svg'
 
 const Container = styled.div`
 display: inline-block;
@@ -80,6 +82,15 @@ width: 48px;
 background: url('./assets/multitarget.png') no-repeat center;
 background-size: 48px;
 `
+const StyledLogo = styled.svg`
+width: 75px;
+height: 75px;
+fill: white;
+}
+`
+const Logo = () => (
+  <StyledLogo viewBox="0 0 800 800" height="800" width="800"><path d="m207 541.1c-1.8-0.3-7.5-1.2-12.7-2.1-41.9-6.8-81.4-36-101.6-75.3-16.7-32.5-20-65-10.4-102.9 6-23.7 22.2-52.3 32.6-57.6 7-3.6 16.5-3.5 24 0.3 12.5 6.3 15.2 21.2 6.5 36.7-11.5 20.5-13.5 24.8-16 34.5-3.4 13-3.7 32.2-0.7 45.1 7 30.1 31.9 57.3 61.4 67.1 48.8 16.2 101.4-9.6 118.5-58.3 3.6-10.2 4.1-13.6 4.6-30.2 0.4-14 0-21-1.6-27.8-10.8-46.2-47.1-83.5-98.1-100.9-7-2.4-13.2-4.8-13.8-5.3-0.6-0.5 3.9-4.5 10-8.8 50.6-35.8 100.7-53.8 164.5-59.1 64.4-5.4 137.6 14.2 193.4 51.8 21.3 14.4 23.1 15.8 20.6 16.7-1.1 0.4-6.7 2.2-12.3 4.1-12.3 4-31.8 13.6-43 21.1-11.2 7.6-30.5 26.6-37.5 37.2-7.9 11.8-14.3 26.1-18.1 39.8-2.5 9.3-3.1 14.6-3.1 30.6 0 18.2 0.2 20 4.1 30.8 9.6 26.9 31.4 48.8 57.4 57.8 25.9 8.9 53.3 6.5 77.8-7 13.4-7.4 30.1-24.9 37-39 15.7-32 13.2-65.9-7.2-96.6-8.9-13.4-8.9-27.8-0.1-37.2 11.2-11.9 28.7-8.5 40.2 7.7 17.4 24.4 29.4 66.3 26.7 93.9-6.3 65.9-50.2 116.1-114.4 130.5-11.9 2.7-43.6 3-54.9 0.6-30-6.4-53.9-19-74.8-39.6-36.6-36.1-50.8-88.5-37.7-138.9 3.2-12.4 12.1-31.5 19.9-43.1 7.4-10.9 23.1-27.3 33.3-34.7 4.4-3.2 8-6.3 8-6.8 0-1.7-18.3-13.1-28.4-17.8-22-10.1-43.2-14.6-69.6-14.5-17.2 0.1-21.8 0.6-33.1 3.5-19.6 5.2-45.7 17.4-57.5 26.8l-3.7 2.9 5.8 3.8c10.1 6.7 28.6 26.4 37.1 39.5 22.3 34.5 29.1 78.3 17.9 116.7-14.9 51.6-56.3 89.9-109.2 101.2-9.3 2-35.7 3.5-42 2.5z"/></ StyledLogo>
+)
 
 class App extends Component {
   render () {
@@ -87,7 +98,8 @@ class App extends Component {
       <div className='App'>
         <GlobalStyle />
         <Header>
-          <img src='./assets/sch.png' alt='logo' height='75px' />
+          <Logo />
+          {/* <img src='./assets/sch.svg' alt='logo' height='75px' style={{'fill':'#555555'}} /> */}
           <h1>Scholar</h1>
           <h4>(Patch 4.4)</h4>
           <h4><a href='https://www.reddit.com/r/ffxiv/comments/9gs4sf/scholar_44_guide/'>Sovasin Kair</a></h4>
