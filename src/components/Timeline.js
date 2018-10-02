@@ -21,7 +21,6 @@ top: 50%;
 height: 1px;
 width: 100%;
 background-color: white;
-z-index: -1;
 `
 const Point = styled.div`
 position: absolute;
