@@ -4,7 +4,7 @@ import './App.css'
 import { Actions } from './components/Actions'
 import { ActionTips } from './components/ActionTips'
 import { Header } from './components/Header'
-import { SCH } from './components/ClassIcons'
+import * as Icon from './components/ClassIcons'
 import { Section } from './components/Section'
 import { Timeline } from './components/Timeline'
 import { GlobalStyle } from './theme/GlobalStyle'
@@ -89,7 +89,7 @@ class App extends Component {
       <div className='App'>
         <GlobalStyle />
         <Header>
-          <SCH width='100px' height='100px' />
+          <Icon.SCH width='100px' height='100px' />
           <h1>Scholar</h1>
           <h4>(Patch 4.4)</h4>
           <h4><a href='https://www.reddit.com/r/ffxiv/comments/9gs4sf/scholar_44_guide/'>Sovasin Kair</a></h4>
@@ -309,39 +309,51 @@ class App extends Component {
           <h2>Party Abilities</h2>
           <p>Healing is a group effort, and there are various abilities your party members can use to contribute to mitigation and healing. This guide will not go into in-depth detail into exactly how the other jobs work, but will instead focus on abilities that may cause a change in your playstyle when used.</p>
           <h3>Co-healer</h3>
-          <h4>White Mage</h4>
+          <h4>White Mage  </h4>
+          <Icon.WHM />
           <ActionTips actions={['Benediction', 'Divine Benison', 'Plenary Indulgence']} job='whm' />
           <h4>Astrologian</h4>
+          <Icon.AST />
           <ActionTips actions={['Essential Dignity', 'Earthly Star', 'Collective Unconscious']} job='ast' />
           <h3>Tanks</h3>
           <h4>Paladin</h4>
+          <Icon.PLD />
           <ActionTips actions={['Divine Veil', 'Intervention', 'Cover', 'Hallowed Ground']} job='pld' />
           <h4>Warrior</h4>
+          <Icon.WAR />
           <ActionTips actions={['Shake it Off', 'Holmgang']} job='war' />
           <h4>Dark Knight</h4>
+          <Icon.DRK />
           <ActionTips actions={['The Blackest Night', 'Living Dead']} job='drk' />
           <h4>Role Actions</h4>
           <ActionTips actions={['Convalescence', 'Reprisal']} job='tank' />
           <h3>Melee DPS</h3>
           <h4>Monk</h4>
+          <Icon.MNK />
           <ActionTips actions={['Mantra']} job='mnk' />
           <h4>Dragoon</h4>
+          <Icon.DRG />
           <ActionTips actions={['Blood for Blood', 'Battle Litany']} job='drg' />
           <h4>Ninja</h4>
+          <Icon.NIN />
           <ActionTips actions={['Smoke Screen', 'Trick Attack']} job='nin' />
           <h4>Role Actions</h4>
           <ActionTips actions={['Feint']} job='melee' />
           <h3>Ranged DPS</h3>
           <h4>Bard</h4>
+          <Icon.BRD />
           <ActionTips actions={[`Nature's Minne`, 'Troubadour']} job='brd' />
           <h4>Machinist</h4>
+          <Icon.MCH />
           <ActionTips actions={['Dismantle']} job='mch' />
           <h4>Role Actions</h4>
           <ActionTips actions={['Refresh', 'Palisade']} job='ranged' />
           <h3>Caster DPS</h3>
           <h4>Summoner</h4>
+          <Icon.SMN />
           <ActionTips actions={['Devotion', 'Resurrection']} job='smn' />
           <h4>Red Mage</h4>
+          <Icon.RDM />
           <ActionTips actions={['Verraise']} job='rdm' />
           <h4>Role Actions</h4>
           <ActionTips actions={['Addle', 'Apocatastasis', 'Mana Shift']} job='caster' />
