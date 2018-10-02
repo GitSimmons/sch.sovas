@@ -5,10 +5,10 @@ import { Actions } from './components/Actions'
 import { ActionTips } from './components/ActionTips'
 import { Header } from './components/Header'
 import * as Icon from './components/ClassIcons'
+import { JobSkills } from './components/JobSkills'
 import { Section } from './components/Section'
 import { Timeline } from './components/Timeline'
 import { GlobalStyle } from './theme/GlobalStyle'
-// import { ReactComponent as Logo } from './sch.svg'
 
 const Container = styled.div`
 display: inline-block;
@@ -305,56 +305,38 @@ class App extends Component {
           <p>In scenarios where you have to quickly cleanse debuffs off multiple people, you could switch to Selene and use Fey Caress to immediately cleanse party members near her. One example is the fire DoT in the second phase of Rathalos EX.
           </p>
         </Section>
+
         <Section>
           <h2>Party Abilities</h2>
           <p>Healing is a group effort, and there are various abilities your party members can use to contribute to mitigation and healing. This guide will not go into in-depth detail into exactly how the other jobs work, but will instead focus on abilities that may cause a change in your playstyle when used.</p>
+
           <h3>Co-healer</h3>
-          <h4>White Mage  </h4>
-          <Icon.WHM />
-          <ActionTips actions={['Benediction', 'Divine Benison', 'Plenary Indulgence']} job='whm' />
-          <h4>Astrologian</h4>
-          <Icon.AST />
-          <ActionTips actions={['Essential Dignity', 'Earthly Star', 'Collective Unconscious']} job='ast' />
+          <JobSkills job='whm' actions={['Benediction', 'Divine Benison', 'Plenary Indulgence']} />
+          <JobSkills actions={['Essential Dignity', 'Earthly Star', 'Collective Unconscious']} job='ast' />
+
           <h3>Tanks</h3>
-          <h4>Paladin</h4>
-          <Icon.PLD />
-          <ActionTips actions={['Divine Veil', 'Intervention', 'Cover', 'Hallowed Ground']} job='pld' />
-          <h4>Warrior</h4>
-          <Icon.WAR />
-          <ActionTips actions={['Shake it Off', 'Holmgang']} job='war' />
-          <h4>Dark Knight</h4>
-          <Icon.DRK />
-          <ActionTips actions={['The Blackest Night', 'Living Dead']} job='drk' />
+          <JobSkills actions={['Divine Veil', 'Intervention', 'Cover', 'Hallowed Ground']} job='pld' />
+          <JobSkills actions={['Shake it Off', 'Holmgang']} job='war' />
+          <JobSkills actions={['The Blackest Night', 'Living Dead']} job='drk' />
           <h4>Role Actions</h4>
           <ActionTips actions={['Convalescence', 'Reprisal']} job='tank' />
+
           <h3>Melee DPS</h3>
-          <h4>Monk</h4>
-          <Icon.MNK />
-          <ActionTips actions={['Mantra']} job='mnk' />
-          <h4>Dragoon</h4>
-          <Icon.DRG />
-          <ActionTips actions={['Blood for Blood', 'Battle Litany']} job='drg' />
-          <h4>Ninja</h4>
-          <Icon.NIN />
-          <ActionTips actions={['Smoke Screen', 'Trick Attack']} job='nin' />
+          <JobSkills actions={['Mantra']} job='mnk' />
+          <JobSkills actions={['Blood for Blood', 'Battle Litany']} job='drg' />
+          <JobSkills actions={['Smoke Screen', 'Trick Attack']} job='nin' />
           <h4>Role Actions</h4>
           <ActionTips actions={['Feint']} job='melee' />
+
           <h3>Ranged DPS</h3>
-          <h4>Bard</h4>
-          <Icon.BRD />
-          <ActionTips actions={[`Nature's Minne`, 'Troubadour']} job='brd' />
-          <h4>Machinist</h4>
-          <Icon.MCH />
-          <ActionTips actions={['Dismantle']} job='mch' />
+          <JobSkills actions={[`Nature's Minne`, 'Troubadour']} job='brd' />
+          <JobSkills actions={['Dismantle']} job='mch' />
           <h4>Role Actions</h4>
           <ActionTips actions={['Refresh', 'Palisade']} job='ranged' />
+
           <h3>Caster DPS</h3>
-          <h4>Summoner</h4>
-          <Icon.SMN />
-          <ActionTips actions={['Devotion', 'Resurrection']} job='smn' />
-          <h4>Red Mage</h4>
-          <Icon.RDM />
-          <ActionTips actions={['Verraise']} job='rdm' />
+          <JobSkills actions={['Devotion', 'Resurrection']} job='smn' />
+          <JobSkills actions={['Verraise']} job='rdm' />
           <h4>Role Actions</h4>
           <ActionTips actions={['Addle', 'Apocatastasis', 'Mana Shift']} job='caster' />
         </Section>
