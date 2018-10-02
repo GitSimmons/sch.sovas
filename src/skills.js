@@ -1140,4 +1140,14 @@ schSkills.map(function ({ Name, ...rest }) {
 })
 
 const getSkills = (array, job = 'sch') => array.map((name) => skills[job][name] || skills['error'])
-export { getSkills }
+const getSkillIcon = (name, job = 'sch') => 
+{
+try{
+  return skills[job][name]['Icon']
+ } catch(e) {
+  return skills['error']['Icon']
+}
+}
+export { getSkills, getSkillIcon }
+
+
