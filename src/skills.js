@@ -721,6 +721,10 @@ const schSkills = [
       'Orders pet to refrain from using actions',
       'until ordered to do so'
     ]
+  },
+  {
+    'Icon': 'i/020000/020669.png',
+    'Name': 'Mind Potion'
   }
 ]
 // Format looks like:
@@ -1140,14 +1144,11 @@ schSkills.map(function ({ Name, ...rest }) {
 })
 
 const getSkills = (array, job = 'sch') => array.map((name) => skills[job][name] || skills['error'])
-const getSkillIcon = (name, job = 'sch') => 
-{
-try{
-  return skills[job][name]['Icon']
- } catch(e) {
-  return skills['error']['Icon']
-}
+const getSkillIcon = (name, job = 'sch') => {
+  try {
+    return skills[job][name]['Icon']
+  } catch (e) {
+    return skills['error']['Icon']
+  }
 }
 export { getSkills, getSkillIcon }
-
-
