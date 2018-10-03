@@ -22,6 +22,12 @@ body {
   letter-spacing: .5rem;
   text-transform: uppercase;
   text-align: left;
+
+  span {
+    font-size: 1rem;
+    letter-spacing: .25rem;
+    color: grey;
+  }
 }
 h3 {
   font-size: 1.75rem;
