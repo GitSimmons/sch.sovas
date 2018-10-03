@@ -19,12 +19,17 @@ p {
   width: 100%;
   background: white;
 }
+a {
+  text-decoration: none;
+  color: grey;
+  :hover {
+    color: white;
+  }
+}
 `
 
-export const Footer = () => (
+export const Footer = ({ children }) => (
   <StyledFooter>
-    <p>This guide underwent many revisions based on feedback from The Balance and Reddit, for which I am deeply grateful.</p>
-    <p>Please contact me at sovasin#3308 or /u/sovasin_kair if you spot any mistakes or have feedback.</p>
-    <p>Thank you for reading. See you in Alphascape!</p>
+    {children}
   </StyledFooter>
 )
