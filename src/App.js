@@ -7,6 +7,7 @@ import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import * as Icon from './components/ClassIcons'
 import { JobSkills } from './components/JobSkills'
+import { Rotation } from './components/Rotation'
 import { Section } from './components/Section'
 import { Timeline } from './components/Timeline'
 import { GlobalStyle } from './theme/GlobalStyle'
@@ -184,6 +185,26 @@ class App extends Component {
           </Container>
         </div>
         <Section>
+          <h2>Opener and Rotation <span>(The Balance)</span></h2>
+          <h4>Starting with 3 stacks, Aetherflow off cd, selene</h4>
+          <div style={{ display: 'flex' }}>
+            <Rotation actions={[['Summon', ['Fey Wind']], 'Mind Potion', 'Cleric Stance', 'Miasma']} />
+            <Rotation interchangeable actions={[['Bio II', ['Energy Drain', 'Shadow Flare']], 'Broil II']} />
+            <Rotation actions={[['Miasma II', ['Chain Stratagem', 'Energy Drain']], 'Broil II', 'Swiftcast', ['Broil II', ['Energy Drain', 'Aetherflow']], 'Broil II', 'Broil II', 'Miasma', ['Miasma II', ['Energy Drain']]]} />
+          </div>
+          <p>Single target DPS involves spamming Broil II and maintaining uptime on your DoTs. oGCDs should be weaved in using Miasma II or Ruin II. Try to avoid overwriting Miasma II’s DoT if possible, as it makes up half of Miasma II’s potency. Here are a few ways to use oGCDs, listed from most optimal to least:</p>
+          <ul>
+            <li>Miasma II + double weave</li>
+            <li>Miasma II + single weave</li>
+            <li>Ruin II + double weave</li>
+            <li>Broil II + clip one oGCD</li>
+            <li>Ruin II + single weave</li>
+          </ul>
+          <p>Against two mobs, you should Miasma II once and let it tick for its full duration while spamming Broil II before using Miasma II again to reapply the DoT. Spreading DoTs with Bane can be a DPS gain depending on how long the mobs live for. Shadow Flare can be weaved in or precasted.</p>
+          <p>Against three or more mobs, you should spread DoTs with Bane and then spam Miasma II, as it deals 100 potency to each enemy on the initial hit alone, along with the DoT. Shadow Flare should be used too. Do not use Broil II or Ruin II unless you are low on mana.</p>
+          <p>Scholars should be aware of snapshotting. DoTs that you apply “snapshot” buffs and debuffs at the moment of application. These snapshotted effects will apply to every tick of the DoT, even if they wear off before the DoT does. This is why the opener includes another Miasma cast near the end, before your first Miasma wears off - this is done to snapshot the initial window of raid buffs such as Chain Stratagem, Battle Litany, Trick Attack and Battle Voice which should</p>
+        </Section>
+        <Section>
           <h2> Mechanical Quirks </h2>
           <p>Scholar is known for being a mechanically clunky job with many quirks not listed in your tooltips. Here are a few that you should be aware of.</p>
           <h4>SHIELD DELAY</h4>
@@ -337,7 +358,12 @@ class App extends Component {
           <JobSkills actions={['Verraise']} job='rdm' />
           <JobSkills actions={['Addle', 'Apocatastasis', 'Mana Shift']} job='caster' />
         </Section>
-        <Footer />
+        <Footer>
+          <p>This guide underwent many revisions based on feedback from The Balance and Reddit, for which I am deeply grateful.</p>
+          <p>Please contact me at sovasin#3308 or <a href='http://reddit.com/u/sovasin_kair'>/u/sovasin_kair</a> if you spot any mistakes or have feedback.</p>
+          <p>Thank you for reading. See you in Alphascape!</p>
+          <p>Web Version by <a href='https://github.com/GitSimmons/sch.sovas'>Ben Simmons</a></p>
+        </Footer>
       </div>
     )
   }
