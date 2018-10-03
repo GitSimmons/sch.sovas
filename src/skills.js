@@ -242,7 +242,8 @@ const schSkills = [
       'CLEANSES ONE DEBUFF FROM TARGET',
       'MP 600',
       'CAST 1.0 (GCD)'
-    ]
+    ],
+    'Note': `Fight-dependent. Sigmascape (Savage) currently does not require Esuna. You can heal through the passenger car phase in O5S with Fey Union alone.`
   },
   {
     'Icon': '/i/002000/002838.png',
@@ -414,8 +415,8 @@ const schSkills = [
     'Icon': '/i/000000/000869.png',
     'Name': 'Surecast',
     'Description': [
-      'SPELLS CAN BE CAST WITHOUT INTERRUPTION',
-      'NULLIFIES MOST KNOCKBACK/DRAW-IN EFFECTS',
+      'NEXT SPELL IS CAST WITHOUT INTERRUPTION',
+      'NULLIFIES KNOCKBACK/DRAW-IN EFFECTS',
       'DURATION 5.0',
       'RECAST 30.0 (oGCD)'
     ],
