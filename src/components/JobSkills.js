@@ -46,7 +46,7 @@ const ActionsGroup = styled.div`
   grid-template-columns:  1fr 1fr;
   justify-content: stretch;
   align-content: stretch;
-  margin: 0rem 1rem 1rem 0rem;
+  margin: auto;
   
   @media (max-width: 900px) {
     grid-template-columns: 1fr
