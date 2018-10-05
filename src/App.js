@@ -172,7 +172,7 @@ class App extends Component {
           <h2>Opener and Rotation <span>(The Balance)</span></h2>
           <h4>Starting with 3 stacks, Aetherflow off cd, selene</h4>
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <Rotation actions={[['Summon', ['Fey Wind']], 'Mind Potion', 'Cleric Stance', 'Miasma']} />
+            <Rotation times={[-7.5, -5.0, , -2.5]}actions={[['Summon', ['Fey Wind']], 'Mind Potion', 'Cleric Stance', 'Miasma']} />
             <Rotation interchangeable actions={[['Bio II', ['Energy Drain', 'Shadow Flare']], 'Broil II']} />
             <Rotation actions={[['Miasma II', ['Chain Stratagem', 'Energy Drain']], 'Broil II', 'Swiftcast', ['Broil II', ['Energy Drain', 'Aetherflow']]]} />
             <Rotation actions={['Broil II', 'Broil II', 'Miasma', ['Miasma II', ['Energy Drain']]]} />
