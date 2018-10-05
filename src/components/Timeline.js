@@ -64,7 +64,10 @@ export const Timeline = () => (
   <StyledTimeline width={width}>
     <CenterLine />
     <Point time='0' label='Cast' width={width / 2}>
-      <Time> <Actions actions={['Succor']} size='20' />0.0</Time>
+      <Time>
+        <Actions actions={['Succor']} size='20' />
+         0.0
+      </Time>
     </Point>
     <Point time='50' label='Heal Propagation' width={width / 5}>
       <Time>
@@ -79,7 +82,10 @@ export const Timeline = () => (
       </Time>
     </Point>
     <Point time='100' >
-      <Time><p>GALVANIZE TAKES EFFECT</p>5.0</Time>
+      <Time>
+        <p>GALVANIZE TAKES EFFECT</p>
+      5.0
+      </Time>
     </Point>
   </StyledTimeline>
 )
