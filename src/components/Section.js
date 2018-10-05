@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const StyledSection = styled.div`
 display: block;
-margin: auto;
+margin: 5rem auto auto auto;
 max-width: 1400px;
 text-align: left;
 position: relative;
