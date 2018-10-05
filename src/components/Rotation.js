@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Action } from './Action'
+
 const StyledRotation = styled.div`
 display: flex;
 align-items: center;
 justify-content: 'space-between';
 position: relative;
 `
+
+/* If props.interchangeable, draw a line from first icon to last icon */
 const Interchangeable = styled.div`
 display: flex;
 justify-content: center;
@@ -14,14 +17,15 @@ content: '';
 position: relative;
 bottom: -0.5rem;
 width: calc(100% - 48px - 1rem); /* 100% - width of one icon - marginLeft */
-background: grey;
+background: lightgrey;
+color: lightgrey;
 height: 1px;
 right: 24px;
 
 &::before, &::after {
   content: '';
   position: absolute;
-  background: grey;
+  background: lightgrey;
   bottom: 0;
 }
 &::before {
@@ -45,13 +49,14 @@ p {
   font-size: 0.5rem;
 }
 `
+
 export const Rotation = ({ actions, interchangeable }) => (
   <div style={{ marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
     <StyledRotation>
-      {actions.map((action) =>
+      {actions.map((action, index) =>
         typeof action === 'string'
-          ? <div style={{ paddingLeft: '1rem' }}><Action name={action} /></div>
-          : <div style={{ display: 'flex', alignItems: 'center' }}>
+          ? <div style={{ paddingLeft: '1rem' }} key={index}><Action name={action} /></div>
+          : <div style={{ display: 'flex', alignItems: 'center' }} key={index}>
             <div style={{ paddingLeft: '1rem' }}><Action name={action[0]} /></div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', height: '80px' }}>
               {action[1][0] && <Action name={action[1][0]} size='40' />}

@@ -44,12 +44,13 @@ const titles = {
 const ActionsGroup = styled.div`
   display: grid;
   grid-template-columns:  1fr 1fr;
-  justify-content: stretch;
-  align-content: stretch;
+  /* justify-content: space-between; */
+  /* align-content: stretch; */
   margin: auto;
   
   @media (max-width: 900px) {
-    grid-template-columns: 1fr
+    grid-template-columns: auto;
+    /* justify-content: center; */
   }
 `
 const StyledJobTitle = styled.div`

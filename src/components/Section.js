@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledSection = styled.div`
 display: block;
 margin: auto;
-max-width: 1200px;
+max-width: 1400px;
 text-align: left;
 position: relative;
 padding: .5rem;
@@ -32,10 +32,15 @@ padding: .5rem;
   ;
 }
 
-
+h3 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
 img {
-  position: absolute;
+  position: inline-block;
   margin-left: 30px;
+  overflow: hidden;
 }
 `
 

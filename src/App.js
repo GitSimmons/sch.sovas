@@ -7,6 +7,7 @@ import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import * as Icon from './components/ClassIcons'
 import { JobSkills } from './components/JobSkills'
+import { RoleActions } from './components/RoleActions'
 import { Rotation } from './components/Rotation'
 import { Section } from './components/Section'
 import { Timeline } from './components/Timeline'
@@ -121,76 +122,60 @@ class App extends Component {
           </ol>
           <p> Your gauge will reset to zero if you die. However it will not reset if your pet dies or is dissipated. </p>
           <p> Aetherpact is the action performed by the Scholar on a party member, which commands your pet to use Fey Union on that player. Aetherpact has a range of 30 yalms, which means that your target must be within 30 yalms of the Scholar, not your fairy. Fey Union has a range of 15 yalms, which refers to the length of the tether. If the target is more than 15 yalms away from the pet when Aetherpact is used, your fairy will move towards the target until it is within range and then proceed to use Fey Union. </p>
-
-        </Section>
-        <Container>
-          <ActionTips actions={['Physick', 'Adloquium', 'Lustrate', 'Excogitation', 'Aetherpact (Fey Union)', 'Embrace']} tree='left-top' />
-          <HealsSingleTargetIcon />
-          <HealerIcon />
-          <HealsMultiTargetIcon />
-          <ActionTips actions={['Indomitability', 'Succor', 'Sacred Soil', 'Whispering Dawn (Eos)', 'Fey Covenant (Eos)', 'Fey Illumination (Eos)']} tree='left-bottom' />
-        </Container>
-        <Container>
-          <ActionTips actions={['Broil II', 'Miasma', 'Bio II', 'Ruin II', 'Energy Drain']} tree='right-top' />
-          <DPSSingleTargetIcon />
-          <DPSIcon />
-          <DPSMultiTargetIcon />
-          <ActionTips actions={['Miasma II', 'Shadow Flare', 'Bane']} tree='right-bottom' />
-        </Container>
-        <div style={{ 'display': 'flex', 'justifyContent': 'space-between', 'maxWidth': '1200px', 'margin': 'auto' }}>
-          <div>
-            <h3 style={{ 'textAlign': 'left' }}>SCH Misc</h3>
-            <ActionTips actions={['Resurrection', 'Aetherflow', 'Deployment Tactics', 'Emergency Tactics', 'Chain Stratagem']} />
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <Container>
+              <ActionTips actions={['Physick', 'Adloquium', 'Lustrate', 'Excogitation', 'Aetherpact (Fey Union)', 'Embrace']} tree='left-top' />
+              <HealsSingleTargetIcon />
+              <HealerIcon />
+              <HealsMultiTargetIcon />
+              <ActionTips actions={['Indomitability', 'Succor', 'Sacred Soil', 'Whispering Dawn (Eos)', 'Fey Covenant (Eos)', 'Fey Illumination (Eos)']} tree='left-bottom' />
+            </Container>
+            <Container>
+              <ActionTips actions={['Broil II', 'Miasma', 'Bio II', 'Ruin II', 'Energy Drain']} tree='right-top' />
+              <DPSSingleTargetIcon />
+              <DPSIcon />
+              <DPSMultiTargetIcon />
+              <ActionTips actions={['Miasma II', 'Shadow Flare', 'Bane']} tree='right-bottom' />
+            </Container>
           </div>
-          <div>
-            <h3 style={{ 'textAlign': 'right' }}>Pet Misc (SCH Actions)</h3>
-            <ActionTips actions={['Summon', 'Summon II', 'Sustain', 'Rouse', 'Dissipation', 'Dissolve Union']} alignRight />
+          <div style={{ 'display': 'flex', 'justifyContent': 'space-between', 'maxWidth': '1400px', 'margin': 'auto', flexWrap: 'wrap' }}>
+            <div>
+              <h3 style={{ 'textAlign': 'left' }}>SCH Misc</h3>
+              <ActionTips actions={['Resurrection', 'Aetherflow', 'Deployment Tactics', 'Emergency Tactics', 'Chain Stratagem']} />
+            </div>
+            <div>
+              <h3 style={{ 'textAlign': 'right' }}>Pet Misc (SCH Actions)</h3>
+              <ActionTips actions={['Summon', 'Summon II', 'Sustain', 'Rouse', 'Dissipation', 'Dissolve Union']} alignRight />
+            </div>
           </div>
-        </div>
-        <div style={{ 'margin': 'auto', 'display': 'flex', 'justifyContent': 'space-between', 'maxWidth': '1200px', 'flexWrap': 'wrap' }}>
-          <div>
-            <h3 style={{ 'textAlign': 'left' }}>Pet Actions To Keybind</h3>
-            <ActionTips actions={['Heel', 'Place', 'Obey']} />
-            <div style={{ 'textAlign': 'left', 'maxWidth': '550px' }}>
-              <p>Your pet should, in almost all situations, be set to Obey so you can use
+          <div style={{ 'margin': 'auto', 'display': 'flex', 'justifyContent': 'space-between', 'maxWidth': '1400px', 'flexWrap': 'wrap' }}>
+            <div>
+              <h3 style={{ 'textAlign': 'left' }}>Pet Actions To Keybind</h3>
+              <ActionTips actions={['Heel', 'Place', 'Obey']} />
+              <div style={{ 'textAlign': 'left', 'maxWidth': '550px' }}>
+                <p>Your pet should, in almost all situations, be set to Obey so you can use
               their abilities manually.</p>
-              <p>It is also recommended to keybind your pet’s three healing/buffing
+                <p>It is also recommended to keybind your pet’s three healing/buffing
                  abilities, but their cooldowns are long enough that clicking them
                  can be viable too. You can also drag them (as well as Heel and Place)
                  to your own hotbar if you find the pet hotbar to be too clunky.</p>
-            </div>
-          </div>
-          <div>
-            <h3 style={{ 'textAlign': 'right' }}>Selene Misc</h3>
-            <ActionTips actions={['Silent Dusk', 'Fey Caress', 'Fey Wind']} alignRight />
-          </div>
-        </div>
-        <div style={{ 'display': 'flex' }}>
-          <Container>
-            <h2>Role Actions</h2>
-            <div style={{ 'display': 'flex', 'flexDirection': 'row', 'maxWidth': '1200px', 'margin': 'auto', 'justifyContent': 'space-between' }}>
-              <div>
-                <h3>Essential</h3>
-                <ActionTips actions={['Lucid Dreaming', 'Swiftcast']} />
-              </div>
-              <div>
-                <h3>Useful</h3>
-                <ActionTips actions={['Protect', 'Esuna', 'Surecast', 'Largesse']} />
-              </div>
-              <div>
-                <h3>Situational</h3>
-                <ActionTips actions={['Cleric Stance', 'Break', 'Rescue', 'Eye for an Eye']} />
               </div>
             </div>
-          </Container>
-        </div>
+            <div>
+              <h3 style={{ 'textAlign': 'right' }}>Selene Misc</h3>
+              <ActionTips actions={['Silent Dusk', 'Fey Caress', 'Fey Wind']} alignRight />
+            </div>
+          </div>
+          <RoleActions />
+        </Section>
         <Section>
           <h2>Opener and Rotation <span>(The Balance)</span></h2>
           <h4>Starting with 3 stacks, Aetherflow off cd, selene</h4>
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             <Rotation actions={[['Summon', ['Fey Wind']], 'Mind Potion', 'Cleric Stance', 'Miasma']} />
             <Rotation interchangeable actions={[['Bio II', ['Energy Drain', 'Shadow Flare']], 'Broil II']} />
-            <Rotation actions={[['Miasma II', ['Chain Stratagem', 'Energy Drain']], 'Broil II', 'Swiftcast', ['Broil II', ['Energy Drain', 'Aetherflow']], 'Broil II', 'Broil II', 'Miasma', ['Miasma II', ['Energy Drain']]]} />
+            <Rotation actions={[['Miasma II', ['Chain Stratagem', 'Energy Drain']], 'Broil II', 'Swiftcast', ['Broil II', ['Energy Drain', 'Aetherflow']]]} />
+            <Rotation actions={['Broil II', 'Broil II', 'Miasma', ['Miasma II', ['Energy Drain']]]} />
           </div>
           <p>Single target DPS involves spamming Broil II and maintaining uptime on your DoTs. oGCDs should be weaved in using Miasma II or Ruin II. Try to avoid overwriting Miasma II’s DoT if possible, as it makes up half of Miasma II’s potency. Here are a few ways to use oGCDs, listed from most optimal to least:</p>
           <ul>
