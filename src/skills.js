@@ -91,7 +91,7 @@ const schSkills = [
       'Potency 800',
       '(Triggers when HP < 50% or upon expiration)',
       'MP 0',
-      'Dureaction 45.0',
+      'Duration 45.0',
       'Recast 45.0 (oGCD)'
     ],
     'Interactions': [
