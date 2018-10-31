@@ -255,7 +255,7 @@ class App extends Component {
           <p>Let your fairy take care of it with Embrace. Rouse or Fey Union also works if you want to top him off quickly and your gauge is full.</p>
           <h4>HARD-HITTING AUTOS</h4>
           <Actions actions={['Rouse', 'Aetherpact (Fey Union)', 'Embrace']} />
-          <p>Rouse. If Rouse if on cooldown, use Fey Union. Manual Embrace if possible.</p>
+          <p>Rouse. If Rouse is on cooldown, use Fey Union. Manual Embrace if possible.</p>
           <h4>PLAYER IS ABOUT TO DIE AND EXCOGITATION IS ON COOLDOWN OR NEEDED LATER</h4>
           <Actions actions={['Lustrate']} />
           <p>Lustrate</p>
