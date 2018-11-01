@@ -205,9 +205,19 @@ class App extends Component {
           <p>Every AoE healing action in this game is affected by heal propagation. When an AoE heal is cast, players are healed one by one rather than at the same time. Raidwide damage also propagates instead of hitting everyone at the same time. Combined with shield delay, this can result in certain players not being shielded in time. Make sure to cast your heals well in advance to prevent this. “Field” abilities such as Sacred Soil are not affected by this as they apply their mitigation immediately to all players.</p>
           <h4>FAIRY INDEPENDENCE</h4>
           <p>Fairies are separate entities and can be commanded to cast their abilities even while you are casting something else.</p>
-          <h4>FAIRY INVULNERABILITY (SUCCOR DEPLOY)</h4>
-          <p>Your fairy is immune to most types of raidwide AoE damage. Thus, Galvanise will often remain on your fairy after the party takes raidwide damage, if you Galvanised the party beforehand. You can then use Deployment Tactics on your fairy to to spread your fairy’s Galvanise to the rest of the party, essentially giving you another partywide Galvanise for free. This can be useful when having to deal with multiple raidwide AoEs in quick succession.</p>
-          <h4>AUTO-EMBRACE AND MANUAL EMBRACE </h4>
+          <h4>
+            FAIRY INVULNERABILITY (SUCCOR DEPLOY)
+          </h4>
+
+          <p>
+  Your fairy is immune to most types of raidwide AoE damage. Thus, Galvanise will often remain on your fairy after the party takes raidwide damage, if you Galvanised the party beforehand. You can then use Deployment Tactics on your fairy to to spread your fairy’s Galvanise to the rest of the party, giving you another partywide Galvanise for free. This can be useful when having to deal with multiple raidwide AoEs in quick succession. Some potency numbers:
+          </p>
+          <p>
+  Succor deploy = 150 (heal) + 225 (shield) + 225 (shield)
+          </p>
+          <p>
+  Deployed Adloquium = 300 (shield, ~900 if it crits depending on how much crit you have)<h4>AUTO-EMBRACE AND MANUAL EMBRACE </h4>
+          </p>
           <p>Your fairy will automatically cast Embrace on anyone below 80% HP. You can still force her to cast Embrace on targets above 80% HP by targeting them and using Embrace. You can use the following macros to make manually Embracing targets easier. Remember that {`<mo>`} macros still work when hovering over a player in the party list.</p>
           <div style={{ 'position': 'relative' }}>
             <img src='./assets/tt.jpg' alt="Target's Target macro" style={{ 'position': 'relative' }} />
