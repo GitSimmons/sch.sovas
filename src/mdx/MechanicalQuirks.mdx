@@ -1,0 +1,48 @@
+import {Timeline} from '../components/Timeline'
+
+## MECHANICAL QUIRKS
+Scholar is known for being a mechanically clunky job with many quirks not listed in your tooltips. Here are a few that you should be aware of.
+
+#### SHIELD DELAY
+<Timeline />
+
+It takes about 1-2 seconds for Galvanize to actually apply, even though the icon appears immediately. In some situations, this can be useful. For example, you might want to cast Adloquium on a tank using Convalescence and buffed by Nature’s Minne to spread onto the rest of the party using Deployment Tactics. Due to shield delay, the Galvanize that you apply will not be immediately eaten by the next autoattack, giving you about two seconds to use Deployment Tactics on him.
+
+#### DOT / BUFF DELAY
+Buffs and debuffs have a delay between cast and application. This delay depends on your ping. Bio II has an especially long delay of about 1-2 seconds. Keep this in mind when trying to line up Chain Stratagem with raid buffs or using Bane.
+
+#### SACRED SOIL / SHADOW FLARE DELAY
+As of patch 4.4, Sacred Soil and Shadow Flare apply instantly instead of on the next server tick.
+
+#### HEAL PROPAGATION
+Every AoE healing action in this game is affected by heal propagation. When an AoE heal is cast, players are healed one by one rather than at the same time. Raidwide damage also propagates instead of hitting everyone at the same time. Combined with shield delay, this can result in certain players not being shielded in time. Make sure to cast your heals well in advance to prevent this. “Field” abilities such as Sacred Soil are not affected by this as they apply their mitigation immediately to all players.
+
+#### FAIRY INDEPENDENCE
+Fairies are separate entities and can be commanded to cast their abilities even while you are casting something else.
+
+#### FAIRY INVULNERABILITY (SUCCOR DEPLOY)
+Your fairy is immune to most types of raidwide AoE damage. Thus, Galvanize will often remain on your fairy after the party takes raidwide damage, if you Galvanized the party beforehand. You can then use Deployment Tactics on your fairy to to spread your fairy’s Galvanize to the rest of the party, giving you another partywide Galvanize for free. This can be useful when having to deal with multiple raidwide AoEs in quick succession. Some potency numbers:
+
+#### Succor deploy = 150 (heal) + 225 (shield) + 225 (shield)
+
+Deployed Adloquium = 300 (shield, ~900 if it crits depending on how much crit you have)
+
+#### AUTO-EMBRACE AND MANUAL EMBRACE
+Your fairy will automatically cast Embrace on anyone below 80% HP. You can still force her to cast Embrace on targets above 80% HP by targeting them and using Embrace. You can use the following macros to make manually Embracing targets easier. Remember that `<mo>` macros still work when hovering over a player in the party list.
+
+![Macro for Manually Casting Embrace on Off Tank](//images.ctfassets.net/dsj52p3ork7k/5qqjsppZnyGkuI6Y2ucsIM/1346e4abbd289a9d0b8f4f35c47e6065/ot.jpg) ![Macro for Manually casting Embrace](//images.ctfassets.net/dsj52p3ork7k/GKI34wTOeaQMeUWSuQa02/6c18c4e4266e1c43e4d62485ba343526/tt.jpg) ![Macro for Mouseover Embrace](//images.ctfassets.net/dsj52p3ork7k/5QopE27LEcUOewMwiigIUS/901945608b61227733d38b956762d25c/mo.jpg)
+
+#### EXCOGITATION EXPIRATION DELAY
+Excogitation will automatically trigger once its duration of 45 seconds elapses if your target does not drop below 50% HP. However, it takes about half a second for the heal to occur and for the buff’s icon to disappear. As the cooldown of Excogitation is also 45 seconds, it is possible to reapply Excogitation on your target just as it expires. If you do this too quickly, Excogitation will have no effect. Excogitation will still be put on cooldown and you will lose one stack of Aetherflow. Video example: https://clips.twitch.tv/SnappyLachrymosePhoneHassaanChop
+
+#### SHARED FAIRY COOLDOWNS
+If you use a fairy ability and then summon your other fairy, the respective slot will still be on cooldown. For example, if you use Fey Wind on Selene (ability #4) and then summon Eos, Fey Illumination (ability #4) will also be on cooldown. However, the cooldown does not “scale”. Fey Wind has a cooldown of 60 seconds, so if you use it and immediately summon Eos Fey Illumination will be on cooldown for 60 seconds too, despite having an actual cooldown of 120 seconds.
+
+#### CRITICAL ADLOQUIUM
+An Adloquium that crits shields for double the amount healed. This doubled shield can be spread using Deployment Tactics which results in an insanely strong partywide Galvanize. Shields provided by Succor are not doubled by critical hits.
+
+#### SHIELD OVERWRITE
+Galvanize will only be overwritten if the new shield is stronger than the previous one. The duration of the old shield will not be refreshed if it is not overwritten.
+
+#### PET SCALING
+Your fairy scales to about 70% of your own stats. Your fairy tooltips are thus inaccurate - the real potencies are about 70% of the advertised value.

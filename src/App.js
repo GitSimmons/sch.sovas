@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import './App.css'
+
 import { Actions } from './components/Actions'
 import { ActionTips } from './components/ActionTips'
 import { Footer } from './components/Footer'
@@ -8,10 +8,14 @@ import { Header } from './components/Header'
 import * as Icon from './components/ClassIcons'
 import { JobSkills } from './components/JobSkills'
 import { RoleActions } from './components/RoleActions'
-import { Rotation } from './components/Rotation'
 import { Section } from './components/Section'
-import { Timeline } from './components/Timeline'
 import { GlobalStyle } from './theme/GlobalStyle'
+import { Playground } from './components/contentful'
+
+/* eslint-disable import/no-webpack-loader-syntax */
+import JobMechanics from '!babel-loader!mdx-loader!./mdx/JobMechanics.mdx'
+import MechanicalQuirks from '!babel-loader!mdx-loader!./mdx/MechanicalQuirks.mdx'
+import Opener from '!babel-loader!mdx-loader!./mdx/Opener.mdx'
 
 const Container = styled.div`
 display: inline-block;
@@ -98,30 +102,8 @@ class App extends Component {
           <h4><a href='https://www.reddit.com/r/ffxiv/comments/9gs4sf/scholar_44_guide/'>Sovasin Kair</a></h4>
         </Header>
         <Section>
-          <h2>Job Mechanics</h2>
-          <h3>Aetherflow
-            <img src='./assets/aetherflow.png' alt='aetherflow' />
-          </h3>
-          <p>
-              Using Aetherflow restores 10% of your MP and grants you three stacks of Aetherflow. Certain Actions will require and consume one stack. Consuming a stack reduces the cooldown of Aetherflow by five seconds. Make sure to use up your stacks in time to shorten the cooldown as much as possible.
-          </p>
-          <p>
-              Stacks granted by Dissipation will also lower the cooldown of Aetherflow by five seconds each.
-          </p>
-          <h3>Faerie Gauge
-            <img src='./assets/faeriegauge.png' alt='faeriegauge' />
-          </h3>
-          <p>
-            Consuming a single stack during combat increases your Faerie Gauge by 10. Gauge is used for Fey Union, which tethers your pet to your target and applies a powerful single-target regen while active. Your pet will not be able to move or perform any actions while Fey Union is active. Fey Union requires at least 10 gauge to activate. Fey Union consumes 10 gauge every tick (3 seconds). Fey Union will end if any of the following situation occur:
-          </p>
-          <ol>
-            <li> Your gauge reaches zero. </li>
-            <li> Your Fey Union'd target moves out of range (15 yalms). If this happens, your pet will stop all actions and your gauge will stop draining. If the targetted player moves back into range, the tether wil reapper and Fey union will resume. </li>
-            <li> You order your pet to use a cooldown, like Whispering Dawn. Generic pet commands such as Place, Heel, Sic etc. and Embrace will not work. </li>
-            <li> Your pet dies, you die, or you use Dissipate. </li>
-          </ol>
-          <p> Your gauge will reset to zero if you die. However it will not reset if your pet dies or is dissipated. </p>
-          <p> Aetherpact is the action performed by the Scholar on a party member, which commands your pet to use Fey Union on that player. Aetherpact has a range of 30 yalms, which means that your target must be within 30 yalms of the Scholar, not your fairy. Fey Union has a range of 15 yalms, which refers to the length of the tether. If the target is more than 15 yalms away from the pet when Aetherpact is used, your fairy will move towards the target until it is within range and then proceed to use Fey Union. </p>
+          <Playground />
+          <JobMechanics />
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             <Container>
               <ActionTips actions={['Physick', 'Adloquium', 'Lustrate', 'Excogitation', 'Aetherpact (Fey Union)', 'Embrace']} tree='left-top' />
@@ -169,81 +151,10 @@ class App extends Component {
           <RoleActions />
         </Section>
         <Section>
-          <h2>Opener and Rotation <span>(The Balance)</span></h2>
-          <h4>Starting with 3 stacks, Aetherflow off cd, selene</h4>
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <Rotation times={[-7.5, -5.0, , -2.5]}actions={[['Summon', ['Fey Wind']], 'Mind Potion', 'Cleric Stance', 'Miasma']} />
-            <Rotation interchangeable actions={[['Bio II', ['Energy Drain', 'Shadow Flare']], 'Broil II']} />
-            <Rotation actions={[['Miasma II', ['Chain Stratagem', 'Energy Drain']], 'Broil II', 'Swiftcast', ['Broil II', ['Energy Drain', 'Aetherflow']]]} />
-            <Rotation actions={['Broil II', 'Broil II', 'Miasma', ['Miasma II', ['Energy Drain']]]} />
-          </div>
-          <p>Single target DPS involves spamming Broil II and maintaining uptime on your DoTs. oGCDs should be weaved in using Miasma II or Ruin II. Try to avoid overwriting Miasma II’s DoT if possible, as it makes up half of Miasma II’s potency. Here are a few ways to use oGCDs, listed from most optimal to least:</p>
-          <ul>
-            <li>Miasma II + double weave</li>
-            <li>Miasma II + single weave</li>
-            <li>Ruin II + double weave</li>
-            <li>Broil II + clip one oGCD</li>
-            <li>Ruin II + single weave</li>
-          </ul>
-          <p>Against two mobs, you should Miasma II once and let it tick for its full duration while spamming Broil II before using Miasma II again to reapply the DoT. Spreading DoTs with Bane can be a DPS gain depending on how long the mobs live for. Shadow Flare can be weaved in or precasted.</p>
-          <p>Against three or more mobs, you should spread DoTs with Bane and then spam Miasma II, as it deals 100 potency to each enemy on the initial hit alone, along with the DoT. Shadow Flare should be used too. Do not use Broil II or Ruin II unless you are low on mana.</p>
-          <p>Scholars should be aware of snapshotting. DoTs that you apply “snapshot” buffs and debuffs at the moment of application. These snapshotted effects will apply to every tick of the DoT, even if they wear off before the DoT does. This is why the opener includes another Miasma cast near the end, before your first Miasma wears off - this is done to snapshot the initial window of raid buffs such as Chain Stratagem, Battle Litany, Trick Attack and Battle Voice which should</p>
+          <Opener />
         </Section>
         <Section>
-          <h2> Mechanical Quirks </h2>
-          <p>Scholar is known for being a mechanically clunky job with many quirks not listed in your tooltips. Here are a few that you should be aware of.</p>
-          <h4>SHIELD DELAY</h4>
-          <Timeline />
-          <p>It takes about 1-2 seconds for Galvanise to actually apply, even though the icon appears immediately. In some situations, this can be useful. For example, you might want to cast Adloquium on a tank using Convalescence and buffed by Nature’s Minne to spread onto the rest of the party using Deployment Tactics. Due to shield delay, the Galvanise that you apply will not be immediately eaten by the next autoattack, giving you about two seconds to use Deployment Tactics on him.</p>
-          <h4>DOT / BUFF DELAY</h4>
-
-          <p>Buffs and debuffs have a delay between cast and application. This delay depends on your ping. Bio II has an especially long delay of about 1-2 seconds. Keep this in mind when trying to line up Chain Stratagem with raid buffs or using Bane.</p>
-          <h4>SACRED SOIL / SHADOW FLARE DELAY</h4>
-          <p>As of patch 4.4, Sacred Soil and Shadow Flare apply instantly instead of on the next server tick.</p>
-          <h4>HEAL PROPAGATION
-          </h4>
-          <p>Every AoE healing action in this game is affected by heal propagation. When an AoE heal is cast, players are healed one by one rather than at the same time. Raidwide damage also propagates instead of hitting everyone at the same time. Combined with shield delay, this can result in certain players not being shielded in time. Make sure to cast your heals well in advance to prevent this. “Field” abilities such as Sacred Soil are not affected by this as they apply their mitigation immediately to all players.</p>
-          <h4>FAIRY INDEPENDENCE</h4>
-          <p>Fairies are separate entities and can be commanded to cast their abilities even while you are casting something else.</p>
-          <h4>
-            FAIRY INVULNERABILITY (SUCCOR DEPLOY)
-          </h4>
-
-          <p>
-  Your fairy is immune to most types of raidwide AoE damage. Thus, Galvanise will often remain on your fairy after the party takes raidwide damage, if you Galvanised the party beforehand. You can then use Deployment Tactics on your fairy to to spread your fairy’s Galvanise to the rest of the party, giving you another partywide Galvanise for free. This can be useful when having to deal with multiple raidwide AoEs in quick succession. Some potency numbers:
-          </p>
-          <p>
-  Succor deploy = 150 (heal) + 225 (shield) + 225 (shield)
-          </p>
-          <p>
-  Deployed Adloquium = 300 (shield, ~900 if it crits depending on how much crit you have)<h4>AUTO-EMBRACE AND MANUAL EMBRACE </h4>
-          </p>
-          <p>Your fairy will automatically cast Embrace on anyone below 80% HP. You can still force her to cast Embrace on targets above 80% HP by targeting them and using Embrace. You can use the following macros to make manually Embracing targets easier. Remember that {`<mo>`} macros still work when hovering over a player in the party list.</p>
-          <div style={{ 'position': 'relative' }}>
-            <img src='./assets/tt.jpg' alt="Target's Target macro" style={{ 'position': 'relative' }} />
-            <img src='./assets/ot.jpg' alt='Target Off Tank macro' style={{ 'position': 'relative' }} />
-            <img src='./assets/mo.jpg' alt='Mouseover macro' style={{ 'position': 'relative' }} />
-          </div>
-
-          <h4>EXCOGITATION EXPIRATION DELAY</h4>
-          <p>Excogitation will automatically trigger once its duration of 45 seconds elapses if your target does not drop below 50% HP. However, it takes about half a second for the heal to occur and for the buff’s icon to disappear. As the cooldown of Excogitation is also 45 seconds, it is possible to reapply Excogitation on your target just as it expires. If you do this too quickly, Excogitation will have no effect. Excogitation will still be put on cooldown and you will lose one stack of Aetherflow. Video example: https://clips.twitch.tv/SnappyLachrymosePhoneHassaanChop
-          </p>
-          <h4>SHARED FAIRY COOLDOWNS
-          </h4>
-          <p>If you use a fairy ability and then summon your other fairy, the respective slot will still be on cooldown. For example, if you use Fey Wind on Selene (ability #4) and then summon Eos, Fey Illumination (ability #4) will also be on cooldown. However, the cooldown does not “scale”. Fey Wind has a cooldown of 60 seconds, so if you use it and immediately summon Eos Fey Illumination will be on cooldown for 60 seconds too, despite having an actual cooldown of 120 seconds.
-          </p>
-
-          <h4>CRITICAL ADLOQUIUM</h4>
-          <p>An Adloquium that crits shields for double the amount healed. This doubled shield can be spread using Deployment Tactics which results in an insanely strong partywide Galvanise. Shields provided by Succor are not doubled by critical hits.
-          </p>
-          <h4>SHIELD OVERWRITE
-          </h4>
-          <p>Galvanise will only be overwritten if the new shield is stronger than the previous one. The duration of the old shield will not be refreshed if it is not overwritten.
-          </p>
-          <h4>PET SCALING
-          </h4>
-          <p>Your fairy scales to about 70% of your own stats. Your fairy tooltips are thus inaccurate - the real potencies are about 70% of the advertised value.
-          </p>
+          <MechanicalQuirks />
         </Section>
         <Section>
           <h2>Decision Making</h2>
