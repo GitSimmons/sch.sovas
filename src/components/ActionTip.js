@@ -125,23 +125,25 @@ p {
 }
 `
 
-export const ActionTip = ({ name, icon, description, interactions, tree, alignRight, note }) => (
-  <NoteWrapper>
-    <StyledActionTip tree={tree} alignRight={alignRight}>
-      {interactions && <InteractionsContainer tree={tree}>
-        {interactions.map((action) =>
-          <StyledAction size='18' icon={action.Icon} key={action.Name} />
-        )}
-      </InteractionsContainer>}
-      <Action icon={icon} />
+export const ActionTip = ({ name, icon, description, interactions, tree, alignRight, note }) => {
+  return (
+    <NoteWrapper>
+      <StyledActionTip tree={tree} alignRight={alignRight}>
+        {interactions && <InteractionsContainer tree={tree}>
+          {interactions.map((action, i) =>
+            <StyledAction size='18' icon={action.Icon || action.fields.icon.fields.file.url} key={i} />
+          )}
+        </InteractionsContainer>}
+        <Action icon={icon} />
 
-      <ul>
-        <li>{name}</li>
-        {description && description.map((string) => <li key={string}>{string}</li>)}
-      </ul>
+        <ul>
+          <li>{name}</li>
+          {description && description.map((string) => <li key={string}>{string}</li>)}
+        </ul>
 
-    </StyledActionTip>
-    {note && <p> {note} </p>}
+      </StyledActionTip>
+      {note && <p> {note} </p>}
 
-  </NoteWrapper>
-)
+    </NoteWrapper>
+  )
+}

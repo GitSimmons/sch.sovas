@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { getSkillIcon } from './../skills.js'
 
 const StyledAction = styled.div`
   display: inline-block;
@@ -9,10 +8,8 @@ const StyledAction = styled.div`
   width: ${props => `${props.size}px`};
   background:
    ${props => props.icon
-    ? `url(./assets/actions/${props.icon}) no-repeat center`
-    : props.name
-      ? `url(./assets/actions/${getSkillIcon(props.name, props.job)}) no-repeat center`
-      : `url('./assets/actions/default.png') no-repeat center`
+    ? `url(${props.icon}) no-repeat center`
+    : `url('./assets/actions/default.png') no-repeat center`
 }
   background-size: ${props => `${props.size - 1 / 6 * props.size}px`};
   
@@ -23,8 +20,7 @@ const StyledAction = styled.div`
     height: ${props => `${props.size}px`};
     width: ${props => `${props.size}px`};
     background-size: ${props => `${props.size}px`};
-    top: ${props => `1px`};
-    right: 0;
+    top: 1px;
 }
 
 `
