@@ -8,6 +8,7 @@ const StyledAction = styled.div`
   height: ${props => `${props.size}px`};
   min-width: ${props => `${props.size}px`};
   width: ${props => `${props.size}px`};
+  left: 0;
   background:
    ${props => props.icon
     ? `url(./assets/actions/${props.icon}) no-repeat center`
@@ -25,8 +26,8 @@ const StyledAction = styled.div`
     min-width: ${props => `${props.size}px`};
     width: ${props => `${props.size}px`};
     background-size: ${props => `${props.size}px`};
-    top: ${props => `1px`};
-    right: 0;
+    top: 1px;
+    left: 0;
 }
 
 `
