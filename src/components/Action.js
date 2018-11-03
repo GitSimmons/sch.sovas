@@ -6,6 +6,7 @@ const StyledAction = styled.div`
   display: inline-block;
   position: relative;
   height: ${props => `${props.size}px`};
+  min-width: ${props => `${props.size}px`};
   width: ${props => `${props.size}px`};
   background:
    ${props => props.icon
@@ -21,6 +22,7 @@ const StyledAction = styled.div`
     position: absolute;
     background: url('./assets/actions/action-overlay.png') no-repeat center;
     height: ${props => `${props.size}px`};
+    min-width: ${props => `${props.size}px`};
     width: ${props => `${props.size}px`};
     background-size: ${props => `${props.size}px`};
     top: ${props => `1px`};

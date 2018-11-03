@@ -39,6 +39,7 @@ const InteractionsContainer = styled.div`
 };
   flex-direction: column;
   height: 40px;
+  min-width: 60px;
   width: 60px;
   justify-content: space-between;
   align-content: flex-start;
