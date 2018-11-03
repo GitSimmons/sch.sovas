@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import './App.css'
 import { Actions } from './components/Actions'
 import { ActionTips } from './components/ActionTips'
 import { Footer } from './components/Footer'

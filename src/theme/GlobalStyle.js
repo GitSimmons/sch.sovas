@@ -7,6 +7,8 @@ html {
 }
 body { 
   background: linear-gradient(#002534, black);
+  text-align: center;
+
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
