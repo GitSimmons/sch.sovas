@@ -12,6 +12,7 @@ const StyledActionTip = styled.div`
   align-items: center;
   font-weight: 300;
   letter-spacing: 0.2rem;
+  text-wrap: wrap;
   text-align:  ${
   props => props.tree === 'right-top' || props.tree === 'right-bottom' || props.alignRight
     ? 'right'
@@ -39,7 +40,7 @@ const InteractionsContainer = styled.div`
 };
   flex-direction: column;
   height: 40px;
-  width: 60px;
+  min-width: 60px;
   justify-content: space-between;
   align-content: flex-start;
 
@@ -117,8 +118,8 @@ ${props => props.tree === 'right-bottom' && css`
 
 const NoteWrapper = styled.div`
 p {
-  padding: 0;
-  margin: 0;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
   font-size: 0.9rem;
   max-width: 350px;
   text-align: left;
@@ -142,7 +143,7 @@ export const ActionTip = ({ name, icon, description, interactions, tree, alignRi
         </ul>
 
       </StyledActionTip>
-      {note && <p> {note} </p>}
+      {<p> {note} </p>}
 
     </NoteWrapper>
   )

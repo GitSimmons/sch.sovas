@@ -21,8 +21,7 @@ const Container = styled.div`
 display: inline-block;
 position: relative; 
 margin: auto;
-padding: 2rem 2rem 2rem 2rem;
-vertical-align: top;
+${''}
 `
 const HealerIcon = styled.div`
 position: relative;
@@ -47,7 +46,7 @@ z-index: 1;
 const HealsSingleTargetIcon = styled.div`
 position: absolute;
 top: 25%;
-left: -5%;
+left: -48px;
 opacity: .6;
 z-index: 1;
 height: 48px;
@@ -58,7 +57,7 @@ background-size: 48px;
 const HealsMultiTargetIcon = styled.div`
 position: absolute;
 bottom: 25%;
-left: -5%;
+left: -58px;
 opacity: .6;
 z-index: 1;
 height: 48px;
@@ -70,7 +69,7 @@ background-size: 48px;
 const DPSSingleTargetIcon = styled.div`
 position: absolute;
 top: 25%;
-right: -5%;
+right: -48px;
 opacity: .6;
 z-index: 1;
 height: 48px;
@@ -81,7 +80,7 @@ background-size: 48px;
 const DPSMultiTargetIcon = styled.div`
 position: absolute;
 bottom: 25%;
-right: -32px;
+right: -58px;
 opacity: .6;
 z-index: 1;
 height: 48px;
@@ -144,7 +143,7 @@ class App extends Component {
               </div>
             </div>
             <div>
-              <h3 style={{ 'textAlign': 'right' }}>Selene Misc</h3>
+              <h3 style={{ 'textAlign': 'right', 'maxWidth': '550px' }}>Selene Misc</h3>
               <ActionTips actions={['Silent Dusk', 'Fey Caress', 'Fey Wind']} alignRight />
             </div>
           </div>

@@ -31,17 +31,6 @@ padding: .5rem;
   left: -1rem;
   ;
 }
-
-h3 {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-img {
-  position: inline-block;
-  margin-left: 30px;
-  overflow: hidden;
-}
 `
 
 export const Section = ({ children }) => (

@@ -5,7 +5,9 @@ const StyledAction = styled.div`
   display: inline-block;
   position: relative;
   height: ${props => `${props.size}px`};
-  width: ${props => `${props.size}px`};
+  min-width: ${props => `${props.size}px `};
+  width:${props => `${props.size}px `};
+  left: 0;
   background:
    ${props => props.icon
     ? `url(${props.icon}) no-repeat center`
@@ -14,12 +16,14 @@ const StyledAction = styled.div`
   background-size: ${props => `${props.size - 1 / 6 * props.size}px`};
   
   &::after {
-    content: ' ';
+    content: '';
     position: absolute;
     background: url('./assets/actions/action-overlay.png') no-repeat center;
     height: ${props => `${props.size}px`};
-    width: ${props => `${props.size}px`};
+    min-width: ${props => `${props.size}px `};
+    width:${props => `${props.size}px `};
     background-size: ${props => `${props.size}px`};
+    left: 0;
     top: 1px;
 }
 
