@@ -215,8 +215,9 @@ class App extends Component {
   Succor deploy = 150 (heal) + 225 (shield) + 225 (shield)
           </p>
           <p>
-  Deployed Adloquium = 300 (shield, ~900 if it crits depending on how much crit you have)<h4>AUTO-EMBRACE AND MANUAL EMBRACE </h4>
+  Deployed Adloquium = 300 (shield, ~900 if it crits depending on how much crit you have)
           </p>
+          <h4>AUTO-EMBRACE AND MANUAL EMBRACE </h4>
           <p>Your fairy will automatically cast Embrace on anyone below 80% HP. You can still force her to cast Embrace on targets above 80% HP by targeting them and using Embrace. You can use the following macros to make manually Embracing targets easier. Remember that {`<mo>`} macros still work when hovering over a player in the party list.</p>
           <div style={{ 'position': 'relative' }}>
             <img src='./assets/tt.jpg' alt="Target's Target macro" style={{ 'position': 'relative' }} />
