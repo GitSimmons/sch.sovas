@@ -3,17 +3,20 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Work+Sans|Roboto:100,300.400|Raleway');  
 html, body {
-  background: linear-gradient(#002534, black);
+  background-color: #002534;
+  background-image: linear-gradient(#002534, black);
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  color: white; 
 
 }
 body { 
-  background: linear-gradient(#002534, black);
   text-align: center;
-
+  @media (max-width: 600px) {
+    text-align: justify;
+  }
     font-family: 'Raleway', sans-serif;
   }
   p, li {
@@ -50,8 +53,8 @@ h4 {
   text-align: left;
   text-transform: uppercase;
   vertical-align: middle;
-  margin-top: 1rem
-  margin-bottom: 0.5rem
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 
 }
   ::selection {

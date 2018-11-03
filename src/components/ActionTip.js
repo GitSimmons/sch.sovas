@@ -123,6 +123,10 @@ p {
   font-size: 0.9rem;
   max-width: 350px;
   text-align: left;
+  @media (max-width: 600px) {
+    max-width: 100%;
+    text-align: justify;
+  }
 }
 `
 
