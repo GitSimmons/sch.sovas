@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const StyledHeader = styled.header`
   margin: 50px 0px 50px;
+  text-align: center;
   h1 {
     font-family: 'Playfair Display';
     font-weight: lighter;
